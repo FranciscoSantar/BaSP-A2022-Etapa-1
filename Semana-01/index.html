@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
+        <meta name="author" content="Francisco Santarelli">
         <title>
             Trackgenix
         </title>
@@ -10,9 +11,11 @@
             <h2>
                 GigaTech Software Solutions SA
             </h2>
-            <img src="assets/RadiumRocketLogo.png" alt="Our company's Logo" width="30">
+            <img src="assets/RRLogo.svg" alt="Our company's Logo" width="40">
         </header>
         <aside>
+            <img src="assets/backIcon.svg" alt="back Icon">
+            <img src="assets/searchIcon.svg" alt="Seach Icon">
             <input type="text" placeholder="Search">
             <input type="submit" value="Go">
             <nav>
@@ -33,15 +36,24 @@
                 <h3>
                     Contact Us
                 </h3>
-                <a href="mailto:trackgenix@gmail.com">
-                    trackgenix@gmail.com
-                </a>
-                <p>
-                    Pellegrini 3000 Rosario, Argetina
-                </p>
-                <a href="tel:0800999000">
-                    0800999000
-                </a>
+                <div>
+                    <img src="assets/mailIcon.svg" alt="mail icon">
+                    <a href="mailto:trackgenix@gmail.com">
+                        trackgenix@gmail.com
+                    </a>
+                </div>
+                <div>
+                    <img src="assets/locationIcon.svg" alt="localitation icon">
+                    <p>
+                        Pellegrini 3000 Rosario, Argetina
+                    </p>
+                </div>
+                <div>
+                    <img src="assets/telephoneIcon.svg" alt="telephone icon">
+                    <a href="tel:0800999000">
+                        0800999000
+                    </a>
+                </div>
             </div>
         </aside>
         <main>
@@ -49,20 +61,23 @@
                 Trackgenix
             </h1>
             <section>
-                <article>
+                <div>
                     <img src="assets/imageCodding.png" alt="A programmer codding" width="400">
                     <h4>
                         Keep a good working-life balance
                     </h4>
+                    <a href="help.html">
+                        <img src="assets/messageIcon.svg" alt="Message Icon" width="30">
+                    </a>
                     <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore distinctio aliquam cumque temporibus id ipsum, 
                         doloremque cum odit, laboriosam officia laborum rem quam sit nam dolore, commodi eveniet ratione illo!
                     </p>
-                    <a href="articles/article1.html">
+                    <a href="infosection/section1.html">
                         Read More
                     </a>
-                </article>
-                <article>
+                </div>
+                <div>
                     <img src="assets/imageWeb.png" alt="Code image" width="100">
                     <h4>
                         Technologies
@@ -72,11 +87,11 @@
                             Lorem ipsum dolor sit amet consectetur adipisicing elit. Id dignissimos illum, nobis corporis autem ut.
                         </b>
                     </p>
-                    <a href="articles/article2.html">
+                    <a href="infosection/section2.html">
                         Read More
                     </a>
-                </article>
-                <article>
+                </div>
+                <div>
                     <img src="assets/girlWritting.png" alt="Girl Writting" width="150">
                     <h4>
                         New Technologies
@@ -86,10 +101,10 @@
                             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, accusamus.
                         </b>
                     </p>
-                    <a href="articles/article3.html">
+                    <a href="infosection/section3.html">
                         Read More
                     </a>
-                </article>
+                </div>
             </section>
             <section>
                 <h3>
@@ -109,42 +124,42 @@
                 <h3>
                     Work whit us!
                 </h3>
-                <article>
+                <div>
                     <h4>
                         Develop your productivity
                     </h4>
-                    <img src="assets/computerIcon.png" alt="Icon of a computer" width="50">
+                    <img src="assets/laptopIcon.svg" alt="Icon of a computer" width="50">
                     <p>
                         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus, architecto!
                     </p>
-                </article>
-                <article>
+                </div>
+                <div>
                     <h4>
                         Progress in your work
                     </h4>
-                    <img src="assets/graphicIcon.png" alt="Graphic Icon" width="50">
+                    <img src="assets/graphicIcon.svg" alt="Graphic Icon" width="50">
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nemo, eligendi.
                     </p>
-                </article>
-                <article>
+                </div>
+                <div>
                     <h4>
                         Running teams
                     </h4>
-                    <img src="assets/teamIcon.png" alt="Team work Icon" width="50">
+                    <img src="assets/teamIcon.svg" alt="Team work Icon" width="50">
                     <p>
                         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Numquam, culpa.
                     </p>
-                </article>
-                <article>
+                </div>
+                <div>
                     <h4>
                         Take decisions
                     </h4>
-                    <img src="assets/checklistIcon.png" alt="Check List icon" width="50">
+                    <img src="assets/listIcon.svg" alt="Check List icon" width="50">
                     <p>
                         Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus, inventore.
                     </p>
-                </article>
+                </div>
             </section>
             <section>
                 <h3>
@@ -194,14 +209,17 @@
                             <option value="suport">
                                 Suport
                             </option>
-                            <option value=""></option>
+                            <option value="legal">
+                                Legal
+                            </option>
                         </select>
                     </div>
                     <div>
                         <label>
                             Message
                         </label>
-                        <textarea placeholder="Write your comment here"></textarea>
+                        <textarea placeholder="Write your comment here">
+                        </textarea>
                     </div>
                     <input type="submit" value="Sumbit">
                 </form>
@@ -210,69 +228,78 @@
                 <h3>
                     Title
                 </h3>
-                <img src="assets/list.png" alt="List ToDo" width="200">
-                <ul>
-                    <li>
+                <div>
+                    <img src="assets/list2Icon.svg" alt="CheckList Item" width="80">
+                    <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur.
-                    </li>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    </li>
-                    <li>
+                    </p>
+                </div>
+                <div>
+                    <img src="assets/list2Icon.svg" alt="CheckList Item" width="80">
+                    <p>
                         Lorem ipsum dolor sit amet consectetur adipisicing.
-                    </li>
-                </ul>
+                    </p>
+                </div>
+                <div>
+                    <img src="assets/list2Icon.svg" alt="CheckList Item" width="80">
+                    <p>
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                    </p>
+                </div>
             </section>
             <section>
                 <h3>
                     Lists
                 </h3>
-                <h4>
-                    Ordered list
-                </h4>
-                <ol>
-                    <li>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    </li>
-                    <li>
-                        Iusto sequi magnam sapiente minima corporis!
-                    </li>
-                    <li>
-                        Qui praesentium nesciunt magnam voluptas temporibus? Aliquid quae accusamus neque? 
-                    </li>
-                </ol>
-                <h4>
-                    Unordered list
-                </h4>
-                <ul>
-                    <li>
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit.
-                    </li>
-                    <li>
-                        Ipsa ea vitae aperiam deserunt
-                    </li>
-                    <li>
-                        Ab debitis dicta soluta enim eum doloribus?
-                    </li>
-                </ul>
-            </section>
-            <footer>
-                <!--Informacion de copyright y contacto con redes sociales (hipervinculos ahi)-->
-                <p>
-                    &copy; GigaTech Software Solutions SA
-                </p>
                 <div>
-                    <a href="https://facebook.com/Gigatech">
-                        <img src="assets/facebookLogo.png" alt="Facebook's Logo" width="30">
-                    </a>
-                    <a href="https://twitter.com/Gigatech">
-                        <img src="assets/twitterLogo.png" alt="Twitter's Logo" width="30">
-                    </a>
-                    <a href="https://linkedin.com/Gigatech">
-                        <img src="assets/LinkedlnLogo.png" alt="Linkedin's Logo" width="30">
-                    </a>
+                    <h4>
+                        Ordered list
+                    </h4>
+                    <ol>
+                        <li>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        </li>
+                        <li>
+                            Iusto sequi magnam sapiente minima corporis!
+                        </li>
+                        <li>
+                            Qui praesentium nesciunt magnam voluptas temporibus? Aliquid quae accusamus neque? 
+                        </li>
+                    </ol>
                 </div>
-            </footer>
+                <div>
+                    <h4>
+                        Unordered list
+                    </h4>
+                    <ul>
+                        <li>
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                        </li>
+                        <li>
+                            Ipsa ea vitae aperiam deserunt
+                        </li>
+                        <li>
+                            Ab debitis dicta soluta enim eum doloribus?
+                        </li>
+                    </ul>
+                </div>
+            </section>
         </main>
+        <footer>
+            <p>
+                &copy; GigaTech Software Solutions SA
+            </p>
+            <div>
+                <a href="https://facebook.com/Gigatech">
+                    <img src="assets/facebookLogo.svg" alt="Facebook's Logo" width="30">
+                </a>
+                <a href="https://twitter.com/Gigatech">
+                    <img src="assets/twitterLogo.svg" alt="Twitter's Logo" width="30">
+                </a>
+                <a href="https://linkedin.com/Gigatech">
+                    <img src="assets/linkedinLogo.svg" alt="Linkedin's Logo" width="30">
+                </a>
+            </div>
+        </footer>
     </body>
 </html>
