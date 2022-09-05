@@ -315,3 +315,65 @@ h1{
     margin: 20px 0px;
     text-align:justify;
 }
+/***********************************************/
+.section5{
+    margin:20px 100px; 
+}
+.textForm{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 10px 0px;
+    color:#373867;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #373867;
+    border-width: 1px;
+}
+.section5 textarea{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color:#373867;
+    display: block;
+    height: 100px;
+    width: 100%;
+    margin: 10px 0px;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #373867;
+    border-width: 1px;
+}
+.section5 select{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 10px 0px;
+    color:#373867;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #373867;
+    border-width: 1px;
+}
+
+.sendButton{
+    background-color: #EBECF0;
+    color: #A3A4B9;
+    padding: 10px;
+    border-radius: 5px;
+    float:right;
+    border-width: 0px;
+    width: 130px;
+
+}
+.sendButton:hover{
+    color: white;
+    background-color: #373867;
+}
