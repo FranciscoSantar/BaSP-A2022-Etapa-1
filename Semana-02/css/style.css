@@ -75,7 +75,7 @@ aside h3{
     margin: 5px;
 }
 #navigationSearch{
-    width: 150px;
+    width: 110px;
     margin: 15px 5px;
 }
 #contactSection{
@@ -157,7 +157,7 @@ h1{
 }
 .subTitleMain{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     margin: 10px 0px;
     color:#373867;
@@ -201,7 +201,7 @@ h1{
 }
 .subTitleMain2{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     padding: 5px 10px;
     color:#373867;
@@ -209,7 +209,7 @@ h1{
 }
 .subTitleMain3{
     font-family: Arial, Helvetica, sans-serif;
-    font-size: 20px;
+    font-size: 30px;
     font-weight: bold;
     padding: 5px 10px;
     color:#373867;
@@ -243,5 +243,75 @@ h1{
     color: #373867;
     margin: 10px 0px;
     float: left;
+}
+/***********************************************/
+#section3{
+    margin:20px; 
+}
+#section3 h3{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #373867;
+    padding: 5px;
+    margin:5px
+}
+#section3 h4{
+    font-size: 25px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #373867;
+    padding: 5px;
+    margin:5px;
+    display: inline-block;
+}
+#section3 p{
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: #373867;
+    margin: 10px 0px;
+}
+.tableSection{
+    display: inline-block;
+    width: 45%;
+    padding: 20px;
+}
+.tableSection img{
+    width: 100px;
+    float: left;
+}
+/***********************************************/
+.section4{
+    margin:20px; 
+}
+.section4 img{
+    width: 520px;
+    float: left;
+    border-radius: 10px;
+}
+.section4 h3{
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: #373867;
+    padding: 5px;
+    margin:5px 10px 40px 10px
+}
+.section4 ol{
+    list-style-type:decimal;
+    list-style-position: inside;
+    padding: 100px;
+    float: left;
 
+}
+.section4 li{
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: #373867;
+    margin: 20px 0px;
+    text-align:justify;
 }
