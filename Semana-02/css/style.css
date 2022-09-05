@@ -1,6 +1,8 @@
 header{
     background-color:#373867;
     width: 100%;
+    position: fixed;
+    top:0px;
 }
 #Logo{
     position: relative;
@@ -12,18 +14,31 @@ header{
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 40px;
     color: white;
     padding: 20px 20px 20px 280px;
 }
+/***********************************************/
 aside{
     background-color: #c4c4c4;
     height: 100%;
     width: 20%;
     padding: 0px;
-    border-radius: 0px 20px 20px 0px;
+    border-radius: 0px 15px 15px 0px;
+    position: fixed;
+    top: 80px;
 }
+aside h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    margin: 20px 0px 30px 20px;
+    color: #373867;
+}
+.navigationLine{
+    height: 1px;
+    background-color: #5A5B7E;
 
+}
 #navigationList{
     list-style-type: none;
     margin: 0px;
@@ -33,18 +48,165 @@ aside{
     display: block;
     color: #373867;
     padding: 20px;
+    margin-left: 15px;
     text-decoration: none;
     font-size: 25px;
     font-family: Arial, Helvetica, sans-serif;
 }
 .navigationItem:hover{
-    color: red;
+    color: #46A37C;
     text-decoration: underline;
 }
-.navIcon{
-    padding: 10px 5px 10px 15px;
+.navigationIcon{
+    padding: 10px 5px 10px 10px;
+    float:left;
+    margin: 5px;
 }
-#navSearch{
-    width: 100px;
+#navigationSearch{
+    width: 150px;
+    margin: 15px 5px;
+}
+#contactSection{
+    margin-left: 10px;
+}
+.contactIcon{
+    width: 20px;
+    margin:0px 5px 5px 0px;
+    float: left;
+}
+.contactDiv{
+    margin: 10px 0px;
+    padding: 5px;
+}
+.contactDiv a,p{
+    text-decoration: none;
+    color: #373867;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 200px;
     display: inline-block;
+    text-align-last: center;
+}
+.contactDiv a:hover{
+    text-decoration: underline;
+    color: #46A37C;
+}
+/***********************************************/
+main{
+    margin-left: 20%;
+    margin-top: 100px;
+}
+h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 50px;
+    font-weight: bold;
+    text-decoration: underline;
+    color: #373867;
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+.mainSection{
+    margin-left: 40px;
+}
+.mainSection1{
+    max-width: 50%;
+    float: left;
+}
+.mainSection2{
+    float:right;
+    max-width: 50%;
+    padding: 0px 50px;
+    box-sizing: border-box;
+    
+}
+.mainSection3{
+    float:right;
+    max-width: 50%;
+    padding: 20px 50px;
+    box-sizing: border-box;
+}
+.mainImage{
+    width: 100%;
+    border-radius: 10px;
+}
+.subTitleMain{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin: 10px 0px;
+    color:#373867;
+
+}
+.mainSection p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    text-align-last: left;
+    color: #373867;
+    margin: 10px 0px;
+    max-width: 100%;
+}
+.readMoreButton{
+    background-color: #EBECF0;
+    color: #A3A4B9;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    float: right;
+}
+.readMoreButton:hover{
+    color: white;
+    background-color: #373867;
+}
+
+.mainSection2 img{
+    width: 150px;
+    border-radius: 10px;
+    float: left;
+}
+.mainSection2 p{
+    display: block;
+    color: #373867;
+    margin-left: 160px;
+}
+.mainSection3 img{
+    width: 150px;
+    border-radius: 10px;
+}
+.subTitleMain2{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    color:#373867;
+
+}
+.subTitleMain3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 5px 10px;
+    color:#373867;
+
+}
+.mainSection3 p{
+    display: block;
+    color: #373867;
+    margin-left: 160px;
+}
+.mainSection3 img{
+    width: 150px;
+    border-radius: 10px;
+    float: left;
+}
+.menuLine{
+    height: 1px;
+    background-color: #373867;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+    margin-top: 530px;
 }
