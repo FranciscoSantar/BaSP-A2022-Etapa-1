@@ -1,3 +1,7 @@
+
+.clr{
+    clear: both;
+}
 header{
     background-color:#373867;
     width: 100%;
@@ -28,6 +32,13 @@ aside{
     position: fixed;
     top: 80px;
 }
+h3{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #373867;
+}
 aside h3{
     font-family: Arial, Helvetica, sans-serif;
     font-size: 22px;
@@ -37,6 +48,7 @@ aside h3{
 .navigationLine{
     height: 1px;
     background-color: #5A5B7E;
+    margin: 10px 0px;
 
 }
 #navigationList{
@@ -78,7 +90,18 @@ aside h3{
     margin: 10px 0px;
     padding: 5px;
 }
-.contactDiv a,p{
+.contactDiv p{
+    text-decoration: none;
+    color: #373867;
+    margin-left: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    font-weight: bold;
+    max-width: 200px;
+    display: inline-block;
+    text-align-last: center;
+}
+.contactDiv a{
     text-decoration: none;
     color: #373867;
     margin-left: 5px;
@@ -202,11 +225,23 @@ h1{
     border-radius: 10px;
     float: left;
 }
-.menuLine{
-    height: 1px;
-    background-color: #373867;
-    position: relative;
-    bottom: 0px;
-    width: 100%;
-    margin-top: 530px;
+/***********************************************/
+#section2{
+    margin: 10px 40px;
+}
+#section2 img{
+    width: 600px;
+    border-radius: 10px;
+    float:right;
+}
+#section2 p{
+    width: 35%;
+    height: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 20px;
+    color: #373867;
+    margin: 10px 0px;
+    float: left;
+
 }
