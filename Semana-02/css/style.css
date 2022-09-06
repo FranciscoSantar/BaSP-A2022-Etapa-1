@@ -1,341 +1,341 @@
-
-.clr{
-    clear: both;
-}
-
 body{
     font-family: 'Roboto', sans-serif;
+    line-height: 1.2;
 }
 header{
-    background-color:#373867;
+    position: fixed;
     width: 100%;
-    position: fixed;
     top:0px;
+    background-color:#373867;
 }
-#Logo{
-    position: relative;
-    top: 10px;
-    left: 20px;
-    width: 60px;
-}
-#headerTitle{
-    display: inline-block;
-    font-weight: bolder;
-    font-size: 40px;
-    color: white;
-    padding: 20px 20px 20px 280px;
-}
-/***********************************************/
 aside{
-    background-color: #c4c4c4;
-    height: 100%;
-    width: 20%;
-    padding: 0px;
-    border-radius: 0px 15px 15px 0px;
     position: fixed;
-    top: 80px;
+    width: 20%;
+    height: 100%;
+    padding: 0px;
+    top: 88px;
+    background-color: #c4c4c4;
+    border-radius: 0px 15px 15px 0px;
+}
+main{
+    margin-top: 100px;
+    margin-left: 20%;
+}
+footer{
+    margin-left: 20%;
+    clear: both;
+}
+h1{
+    margin: 10px;
+    padding: 10px;
+    font-size: 55px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: underline;
+    color: #373867;
 }
 h3{
     font-size: 30px;
-    text-align: center;
     font-weight: bold;
+    text-align: center;
     color: #373867;
 }
-aside h3{
-    font-size: 22px;
-    margin: 20px 0px 30px 20px;
-    color: #373867;
-}
-.navigationLine{
-    height: 1px;
-    background-color: #5A5B7E;
-    margin: 10px 0px;
-
-}
-#navigationList{
-    list-style-type: none;
-    margin: 0px;
-    padding: 0px;
-}
-.navigationItem{
-    display: block;
-    color: #373867;
-    padding: 20px;
-    margin-left: 15px;
-    text-decoration: none;
+h4{
     font-size: 25px;
+    font-weight: bold;
+    color:#373867;
 }
-.navigationItem:hover{
-    color: #46A37C;
-    text-decoration: underline;
+p{
+    font-size: 20px;
+    font-weight: normal;
+    color: #373867;
 }
-.navigationIcon{
-    padding: 10px 5px 10px 10px;
+/***********************************************/
+#header-logo{
+    position: relative;
+    width: 60px;
+    top: 10px;
+    left: 20px;
+}
+#header-title{
+    display: inline-block;
+    margin-left: 30%;
+    padding: 20px;
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+}
+/***********************************************/
+.navigation-icon{
     float:left;
     margin: 5px;
+    padding: 10px 5px 10px 10px;
 }
-#navigationSearch{
+#navigation-search-field{
     width: 110px;
     margin: 15px 5px;
 }
-#contactSection{
-    margin-left: 10px;
+#navigation-list{
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px #373867 solid;
+    list-style-type: none;
 }
-.contactIcon{
-    width: 20px;
-    margin:0px 5px 5px 0px;
-    float: left;
-}
-.contactDiv{
-    margin: 10px 0px;
-    padding: 5px;
-}
-.contactDiv p{
+.navigation-item{
+    display: block;
+    margin-left: 15px;
+    padding: 20px;
+    font-size: 25px;
     text-decoration: none;
     color: #373867;
-    margin-left: 5px;
-    font-size: 17px;
-    font-weight: bold;
-    max-width: 200px;
-    display: inline-block;
-    text-align-last: center;
 }
-.contactDiv a{
-    text-decoration: none;
-    color: #373867;
-    margin-left: 5px;
-    font-size: 17px;
-    font-weight: bold;
-    max-width: 200px;
-    display: inline-block;
-    text-align-last: center;
-}
-.contactDiv a:hover{
+.navigation-item:hover{
     text-decoration: underline;
     color: #46A37C;
 }
-/***********************************************/
-main{
-    margin-left: 20%;
-    margin-top: 100px;
+#contact-section{
+    padding-left: 10px;
+    border-bottom: 1px #373867 solid;
 }
-h1{
-    font-size: 50px;
-    font-weight: bold;
-    text-decoration: underline;
+#contact-section h3{
+    margin: 20px 0px 30px 0px;
+    font-size: 30px;
     color: #373867;
-    text-align: center;
-    padding: 10px;
-    margin: 10px;
 }
-#messageIcon{
-    width: 30px;
+.contact-item{
+    margin: 10px 0px;
+    padding: 5px;
+}
+.contact-icon{
+    float: left;
+    width: 20px;
+    margin:0px 5px 5px 0px;
+}
+.contact-item a{
+    display: inline-block;
+    max-width: 200px;
+    margin-left: 5px;
+    font-size: 20px;
+    font-weight: normal;
+    text-align-last: center;
+    text-decoration: none;
+    color: #373867;
+}
+.contact-item a:hover{
+    text-decoration: underline;
+    color: #46A37C;
+}
+.contact-item p{
+    display: inline-block;
+    max-width: 220px;
+    margin-left: 5px;
+    text-align-last: center;
+    text-decoration: none;
+}
+/***********************************************/
+#message-icon{
     float: right;
+    width: 30px;
     margin-right: 30px;
 }
-.mainSection{
-    margin-left: 40px;
+.main-section{
+    margin-left: 40px;  
+    padding: 10px 0px;
 }
-.mainSection1{
-    max-width: 50%;
+.main-section-div-1{
     float: left;
-}
-.mainSection2{
-    float:right;
     max-width: 50%;
-    padding: 0px 50px;
-    box-sizing: border-box;
-    
 }
-.mainSection3{
-    float:right;
-    max-width: 50%;
-    padding: 20px 50px;
-    box-sizing: border-box;
-}
-.mainImage{
+.main-section-div-1 img{
     width: 100%;
     border-radius: 10px;
 }
-.subTitleMain{
-    font-size: 30px;
-    font-weight: bold;
+.main-section-div-1 h4{
     margin: 10px 0px;
-    color:#373867;
 
 }
-.mainSection p{
-    font-weight: normal;
-    font-size: 20px;
-    text-align-last: left;
-    color: #373867;
-    margin: 10px 0px;
+.main-section-div-1 p{
     max-width: 100%;
+    margin: 10px 0px;
+    text-align-last: left;
 }
-.readMoreButton{
-    background-color: #EBECF0;
-    color: #A3A4B9;
+.read-more-button{
+    float: right;
+    margin: 10px 0px;
     padding: 10px;
+    background-color: #EBECF0;
     border-radius: 5px;
     text-decoration: none;
-    float: right;
+    color: #A3A4B9;
 }
-.readMoreButton:hover{
-    color: white;
+.read-more-button:hover{
     background-color: #373867;
+    color: white;
 }
-
-.mainSection2 img{
-    width: 150px;
-    border-radius: 10px;
-    float: left;
-    margin-right: 15px;
-}
-.mainSection2 p{
-    display: block;
-    color: #373867;
-    margin-left: 160px;
-}
-.mainSection3 img{
-    width: 150px;
-    border-radius: 10px;
-    margin-right: 15px;
-}
-.subTitleMain2{
-    font-size: 30px;
-    font-weight: bold;
-    padding: 5px 10px;
-    color:#373867;
-
-}
-.subTitleMain3{
-    font-size: 30px;
-    font-weight: bold;
-    padding: 5px 10px;
-    color:#373867;
-
-
-}
-.mainSection3 p{
-    display: block;
-    color: #373867;
-    margin-left: 160px;
-}
-.mainSection3 img{
-    width: 150px;
-    border-radius: 10px;
-    float: left;
-}
-/***********************************************/
-#section2{
-    margin: 10px 40px;
-}
-#section2 h3{
-    margin-bottom: 30px;
-}
-#section2 img{
-    width: 600px;
-    border-radius: 10px;
+.main-section-div-2{
     float:right;
+    max-width: 50%;
+    padding: 0px 25px 10px 25px;
+    border-bottom: 1px #373867 solid;
+    box-sizing: border-box;
 }
-#section2 p{
-    width: 35%;
-    height: 20px;
-    font-weight: normal;
-    font-size: 20px;
-    color: #373867;
-    margin: 10px 0px;
+.main-section-div-2 img{
     float: left;
+    width: 150px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+.main-section-div-2 h4{
+    padding: 5px 10px;
+}
+.main-section-div-2 p{
+    display: block;
+    margin-left: 160px;
+}
+.main-section-div-3{
+    float:right;
+    max-width: 50%;
+    padding: 10px 25px 10px 25px;
+    border-bottom: 1px #373867 solid;
+    box-sizing: border-box;
+}
+.main-section-div-3 img{
+    float: left;
+    width: 150px;
+    margin-right: 15px;
+    border-radius: 10px;
+}
+.main-section-div-3 h4{
+    padding: 5px 10px;
+}
+.main-section-div-3 p{
+    display: block;
+    margin-left: 160px;
 }
 /***********************************************/
-#section3{
-    margin:20px; 
+.trayectory-section{
+    margin: 20px 0px;
+    padding: 10px 30px;
+    border-top: 1px #373867 solid;
+    clear: both;
 }
-#section3 h3{
-    font-size: 30px;
-    font-weight: bold;
-    color: #373867;
-    padding: 5px;
-    margin:5px
+.trayectory-section h3{
+    margin-bottom: 20px;
+    padding: 10px;
 }
-#section3 h4{
-    font-size: 25px;
-    font-weight: bold;
-    color: #373867;
-    padding: 5px;
-    display: inline-block;
-}
-#section3 p{
+.trayectory-section p{
+    float: left;
+    width: 30%;
     height: 20px;
-    font-weight: normal;
-    font-size: 20px;
-    color: #373867;
-    margin: 10px 0px;
+    margin: 10px 20px 10px 60px;
 }
-.tableSection{
+.trayectory-section img{
+    float:right;
+    width: 600px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+/***********************************************/
+.work-whit-us-section{
+    margin:20px 0px; 
+    padding: 10px;
+    border-top: 1px #373867 solid;
+    clear: both;
+}
+.work-whit-us-section h3{
+    margin: 10px;
+    padding: 5px;
+}
+.work-whit-us-section-item{
     display: inline-block;
     width: 44%;
+    margin-left: 25px;
     padding: 20px;
 }
-.tableSection img{
+.work-whit-us-section-item h4{
+    display: inline-block;
+    padding: 5px;
+}
+.work-whit-us-section-item img{
+    float: left;
     width: 100px;
     margin-right: 20px;
-    float: left;
+}
+.work-whit-us-section-item p{
+    height: 20px;
+    margin: 10px 0px;
 }
 /***********************************************/
-.section4{
-    margin:20px; 
+.functions-section{
+    margin:10px 0px; 
+    padding: 5px;
+    border-top: 1px #373867 solid;
+    clear: both;
 }
-.section4 img{
-    width: 520px;
+.functions-section h3{
+    margin:0px 10px 40px 10px;
+    padding: 10px;
+}
+.functions-section img{
     float: left;
+    width: 520px;
+    margin-left: 50px;
+    margin-bottom: 20px;
     border-radius: 10px;
 }
-.section4 h3{
-    font-size: 30px;
-    font-weight: bold;
-    color: #373867;
-    padding: 5px;
-    margin:5px 10px 40px 10px
-}
-.section4 ol{
+.functions-section ol{
+    float: left;
+    margin-left: 80px;
+    padding: 70px;
     list-style-type:decimal;
     list-style-position: inside;
-    padding: 100px;
-    float: left;
 }
-.section4 li{
+.functions-section li{
     height: 20px;
-    font-weight: normal;
-    font-size: 20px;
-    color: #373867;
     margin: 20px 0px;
+    font-size: 20px;
+    font-weight: normal;
     text-align:justify;
+    color: #373867;
 }
 /***********************************************/
-.section5{
-    margin:20px 100px; 
+.contact-section{
+    clear: both;
+    margin:20px 0px; 
+    padding: 10px 110px;
+    border-top: 1px #373867 solid;
 }
-.section5 h3{
+.contact-section h3{
     margin-bottom: 70px; 
+    padding: 10px;
 }
-.textForm{
-    font-weight: normal;
-    font-size: 20px;
+.contact-form-text{
     display: block;
     height: 40px;
     width: 100%;
     margin: 10px 0px;
-    color:#373867;
     border-style: solid;
     border-radius: 5px;
     border-color: #373867;
     border-width: 1px;
-}
-.section5 textarea{
-    font-weight: normal;
     font-size: 20px;
+    font-weight: normal;
     color:#373867;
+}
+.contact-form select{
+    display: block;
+    height: 40px;
+    width: 100%;
+    margin: 10px 0px;
+    border-style: solid;
+    border-radius: 5px;
+    border-color: #373867;
+    border-width: 1px;
+    font-size: 20px;
+    font-weight: normal;
+    color:#373867;
+}
+.contact-form textarea{
     display: block;
     height: 100px;
     width: 100%;
@@ -345,107 +345,95 @@ h1{
     border-radius: 5px;
     border-color: #373867;
     border-width: 1px;
-}
-.section5 select{
-    font-weight: normal;
     font-size: 20px;
-    display: block;
-    height: 40px;
-    width: 100%;
-    margin: 10px 0px;
+    font-weight: normal;
+    font-family: 'Roboto',sans-serif;
     color:#373867;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: #373867;
-    border-width: 1px;
 }
-.sendButton{
-    background-color: #EBECF0;
-    color: #A3A4B9;
-    padding: 10px;
-    border-radius: 5px;
+.contact-form-send-button{
     float:right;
-    border-width: 0px;
     width: 130px;
-
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #EBECF0;
+    border-radius: 5px;
+    border-width: 0px;
+    color: #A3A4B9;
 }
-.sendButton:hover{
-    color: white;
+.contact-form-send-button:hover{
     background-color: #373867;
+    color: white;
 }
 /***********************************************/
-.section6{
-    margin:20px; 
+.title-section{
+    margin:20px 0px; 
+    padding: 10px;
+    border-top: 1px #373867 solid;
+    clear: both;
 }
-.section6 h3{
+.title-section h3{
     margin-bottom:20px; 
+    padding: 10px;
 }
-.section6Conteiner{
+.title-section-container{
     width: 100%; 
 }
-.section6Conteiner img{
+.title-section-container img{
     width: 300px;
     margin-left: 90px;
 }
-.section6Conteiner p{
-    font-weight: normal;
-    font-size: 20px;
-    color:#373867;
-    width: 40%; 
+.title-section-container p{
     display: inline-block;
-    margin-left: 150px;
+    width: 40%; 
     margin-top: 0px;
+    margin-left: 150px;
 }
 /***********************************************/
-.section7{
-    margin:20px; 
+.lists-section{
+    margin:20px 0px; 
+    padding: 10px; 
+    border-top: 1px #373867 solid;
+    clear: both;
 }
-.section7 h4{
-    font-size: 25px;
-    font-weight: normal;
-    color: #373867;
-
-    padding: 5px;
-    margin: 5px;
-
-}
-.listSection{
-    width: 35%;
+.lists-section-list{
     float: left;
+    width: 35%;
     margin: 30px 70px;
 }
-.listSection ol{
+.lists-section h4{
+    margin: 10px;
+    padding: 10px;
+}
+.lists-section-list ol{
+    padding: 20px;
     list-style-type:decimal;
     list-style-position: inside;
-    padding: 20px;
 }
-.listSection ul{
+.lists-section-list li{
+    font-size: 20px;
+    font-weight: normal;
+    color:#373867;
+}
+.lists-section-list ul{
+    padding: 20px;
     list-style-type:disc;
     list-style-position: inside;
-    padding: 20px;
 }
-.listSection li{
+/***********************************************/
+.copyright-text{
+    padding: 10px;
+    font-size: 15px;
     font-weight: normal;
-    font-size: 20px;
-    color:#373867;
-    padding: 3px;
-}
-footer{
-    margin-left: 20%;
-
-}
-.imageContainer{
     text-align: center;
-    
+    color:#373867;
 }
-footer img{
+.footer-images-container{
+    text-align: center;
+}
+.footer-link{
+    text-decoration: none;
+}
+.footer-link-images{
     width: 30px;
     margin: 0px 5px 20px 5px;
-}
-footer p{
-    font-weight: normal;
-    font-size: 15px;
-    color:#373867;
-    padding: 10px;
-    text-align: center;
 }
