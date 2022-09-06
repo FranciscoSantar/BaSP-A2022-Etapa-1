@@ -85,7 +85,7 @@ p{
     display: block;
     margin-left: 15px;
     padding: 20px;
-    font-size: 25px;
+    font-size: 20px;
     text-decoration: none;
     color: #373867;
 }
@@ -98,8 +98,8 @@ p{
     border-bottom: 1px #373867 solid;
 }
 #contact-section h3{
-    margin: 20px 0px 30px 0px;
-    font-size: 30px;
+    margin: 20px 0px 20px 0px;
+    font-size: 25px;
     color: #373867;
 }
 .contact-item{
@@ -113,9 +113,9 @@ p{
 }
 .contact-item a{
     display: inline-block;
-    max-width: 200px;
+    max-width: 250px;
     margin-left: 5px;
-    font-size: 20px;
+    font-size: 17px;
     font-weight: normal;
     text-align-last: center;
     text-decoration: none;
@@ -126,11 +126,11 @@ p{
     color: #46A37C;
 }
 .contact-item p{
-    display: inline-block;
+    display: inline;
     max-width: 220px;
     margin-left: 5px;
-    text-align-last: center;
-    text-decoration: none;
+    text-align-last:center;
+    font-size: 17px;
 }
 /***********************************************/
 #message-icon{
@@ -232,7 +232,7 @@ p{
 .trayectory-section img{
     float:right;
     width: 600px;
-    margin-bottom: 20px;
+    margin-bottom: 45px;
     border-radius: 10px;
 }
 /***********************************************/
@@ -248,7 +248,7 @@ p{
 }
 .work-whit-us-section-item{
     display: inline-block;
-    width: 44%;
+    width: 42%;
     margin-left: 25px;
     padding: 20px;
 }
