@@ -1,6 +1,7 @@
 footer{
-    margin-left: 20%;
-    clear: both;
+    display: flex;
+    flex-direction: column;
+    background-color: #D9D9D9;
 }
 .copyright-text{
     padding: 10px;
@@ -10,6 +11,8 @@ footer{
     color:#373867;
 }
 .footer-images-container{
+    display: flex;
+    align-self: center;
     text-align: center;
 }
 .footer-link{
