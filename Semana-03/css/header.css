@@ -1,0 +1,19 @@
+header {
+    top:0px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    align-items: center;
+    background-color: #373867;
+}
+#header-logo {
+    width: 80px;
+    margin-left: 3%;
+    margin-right: 10%;
+}
+#header-title {
+    font-size: 40px;
+    font-weight: bolder;
+    color: white;
+    margin: 5px;
+}

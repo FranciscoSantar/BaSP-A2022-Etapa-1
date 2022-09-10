@@ -1,0 +1,75 @@
+aside{
+    position: fixed;
+    width: 20%;
+    height: 100%;
+    padding: 0px;
+    top: 88px;
+    background-color: #c4c4c4;
+    border-radius: 0px 15px 15px 0px;
+}
+.navigation-icon{
+    float:left;
+    margin: 5px;
+    padding: 10px 5px 10px 10px;
+}
+#navigation-search-field{
+    width: 110px;
+    margin: 15px 5px;
+}
+#navigation-list{
+    margin: 0px;
+    padding: 0px;
+    border-bottom: 1px #373867 solid;
+    list-style-type: none;
+}
+.navigation-item{
+    display: block;
+    margin-left: 15px;
+    padding: 20px;
+    font-size: 20px;
+    text-decoration: none;
+    color: #373867;
+}
+.navigation-item:hover{
+    text-decoration: underline;
+    color: #46A37C;
+}
+#contact-section{
+    padding-left: 10px;
+    border-bottom: 1px #373867 solid;
+}
+#contact-section h3{
+    margin: 20px 0px 20px 0px;
+    font-size: 25px;
+    color: #373867;
+}
+.contact-item{
+    margin: 10px 0px;
+    padding: 5px;
+}
+.contact-icon{
+    float: left;
+    width: 20px;
+    margin:0px 5px 5px 0px;
+}
+.contact-item a{
+    display: inline-block;
+    max-width: 250px;
+    margin-left: 5px;
+    font-size: 17px;
+    font-weight: normal;
+    text-align-last: center;
+    text-decoration: none;
+    color: #373867;
+}
+.contact-item a:hover{
+    text-decoration: underline;
+    color: #46A37C;
+}
+.contact-item p{
+    display: inline;
+    max-width: 220px;
+    margin-left: 5px;
+    text-align-last:center;
+    font-size: 17px;
+}

@@ -1,0 +1,21 @@
+footer{
+    margin-left: 20%;
+    clear: both;
+}
+.copyright-text{
+    padding: 10px;
+    font-size: 15px;
+    font-weight: normal;
+    text-align: center;
+    color:#373867;
+}
+.footer-images-container{
+    text-align: center;
+}
+.footer-link{
+    text-decoration: none;
+}
+.footer-link-images{
+    width: 30px;
+    margin: 0px 5px 20px 5px;
+}
