@@ -29,14 +29,22 @@ p{
     color: #373867;
 }
 
-@media screen and (max-width: 768px) { 
-    aside{
-            display: none; 
+@media screen and (min-width: 768px) { 
+    #header-title{
+        font-size: 55px;
+    }
+    .main-section-div-3{
+            max-width: 46%;
         }
+    .work-whit-us-container{
+        background-color: lightcoral;
+        flex-wrap: nowrap;
+    }
+    .work-whit-us-section-item{
+        background-color: lightgreen;
+        width: 45%;
+    }
 }
-@media screen and (max-width: 1024px) { 
+@media screen and (min-width: 1024px) { 
 
-    aside{
-            display: none; 
-        }
 }
