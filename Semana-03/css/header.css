@@ -3,17 +3,18 @@ header {
     width: 100%;
     display: flex;
     position: fixed;
-    align-items: center;
+    justify-content: baseline;
     background-color: #373867;
 }
 #header-logo {
     width: 80px;
-    margin-left: 3%;
-    margin-right: 10%;
+    margin-left: 1%;
+    margin:10px
 }
 #header-title {
-    font-size: 40px;
+    font-size: 30px;
     font-weight: bolder;
     color: white;
-    margin: 5px;
+    margin: auto;
+    text-align: center;
 }

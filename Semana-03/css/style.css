@@ -4,7 +4,7 @@ body{
 }
 h1{
 
-    font-size: 55px;
+    font-size: 50px;
     font-weight: bold;
     text-decoration: underline;
     color: #373867;
@@ -31,27 +31,27 @@ p{
 @media screen and (min-width: 768px) {
 
     .side-icons{
-        max-height: 40px;
-    }
-    .main-section{
-        max-height: 1030px;
+        max-height: 1px;
     }
     .main-section-div-1{
-        max-width: 40%;
+        max-width: 46%;
     }
     .main-section-div-2{
-        max-width: 40%;
+        max-width: 46%;
     }
     .main-section-div-3{
         max-width: 46%;
     }
     .work-whit-us-container{
-        background-color: lightcoral;
+        align-items: baseline;
+        justify-content: center;
         /*flex-wrap: nowrap;*/
     }
     .work-whit-us-section-item{
-        background-color: lightgreen;
         width: 45%;
+    }
+    .work-whit-us-section-item img{
+        max-width: 60%;
     }
     /*.functions-content{
         flex-wrap: nowrap;
@@ -64,7 +64,7 @@ p{
         flex-wrap: nowrap;
     }*/
     .title-section-container{
-        max-width: 40%;
+        max-width: 43%;
     }
     .lists-section-list{
         max-width: 48%;
@@ -72,52 +72,54 @@ p{
 }
 @media screen and (min-width: 1024px) {
     .hidden{
-        display: block;
+        display: flex;
     }
     .side-icons{
         display: none;
     }
     main{
-        margin-left: 20%;
+        margin-left: 23%;
     }
     .main-section{
         flex-direction: column;
         justify-content: center;
         flex-wrap: wrap;
-        height: 850px;
+        height: 900px;
     }
     .main-section-div-1{
         background-color: lightpink;
-        width: 50%;
+        width: 60%;
+        height: 490px;
     }
     .main-section-div-2,.main-section-div-3{
-        flex-basis: 30%;
-        width: 40%;
-    }
-    .main-section-div-1 img{
         width: 25%;
     }
+    .main-section-div-1 img{
+        width: 70%;
+    }
     .main-section-div-2 img{
-        max-width: 20%;
+        max-width: 30%;
     }
     .main-section-div-3 img{
-        max-width: 20%;
+        max-width: 30%;
     }
     .content-trayectory{
-        background-color: aqua;
         justify-content: space-between;
     }
     .content-trayectory img{
         order:2;
-        max-width:65%;
+        max-width:60%;
     }
     .content-trayectory p{
-        max-width:25%;
+        max-width:35%;
     }
     .title-section-container{
         display: flex;
         justify-content: space-between;
         align-items: center;
         max-width: 100%;
+    }
+    .functions-content img{
+        max-width: 55%;
     }
 }

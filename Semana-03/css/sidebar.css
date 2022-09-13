@@ -1,29 +1,38 @@
-aside{
+.sidebar-container{
     position: fixed;
-    width: 20%;
+    display: flex;
+    flex-direction: column;
+    width: 23%;
     height: 100%;
+    margin-top: 87px;
     padding: 0px;
-    top: 88px;
     background-color: #c4c4c4;
     border-radius: 0px 15px 15px 0px;
 }
+.search-section{
+    display:flex;
+    justify-content: first baseline;
+}
+.go-button{
+    height: 25px;
+    margin-right: 5px;
+    align-self: center;
+}
 .navigation-icon{
-    float:left;
     margin: 5px;
-    padding: 10px 5px 10px 10px;
 }
 #navigation-search-field{
-    width: 110px;
+    width: 50%;
     margin: 15px 5px;
 }
-#navigation-list{
-    margin: 0px;
-    padding: 0px;
+.links-section{
+    display: flex;
+    flex-direction: column;
     border-bottom: 1px #373867 solid;
-    list-style-type: none;
 }
 .navigation-item{
     display: block;
+    margin: 10px 0px;
     margin-left: 15px;
     padding: 20px;
     font-size: 20px;
@@ -35,6 +44,8 @@ aside{
     color: #46A37C;
 }
 #contact-section{
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
     border-bottom: 1px #373867 solid;
 }
@@ -44,17 +55,17 @@ aside{
     color: #373867;
 }
 .contact-item{
+    display: flex;
+    justify-content: baseline;
     margin: 10px 0px;
     padding: 5px;
 }
 .contact-icon{
-    float: left;
     width: 20px;
     margin:0px 5px 5px 0px;
 }
 .contact-item a{
-    display: inline-block;
-    max-width: 250px;
+    max-width: 80%;
     margin-left: 5px;
     font-size: 17px;
     font-weight: normal;
@@ -67,8 +78,7 @@ aside{
     color: #46A37C;
 }
 .contact-item p{
-    display: inline;
-    max-width: 220px;
+    max-width: 80%;
     margin-left: 5px;
     text-align-last:center;
     font-size: 17px;
