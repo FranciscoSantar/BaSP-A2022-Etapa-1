@@ -3,12 +3,9 @@ body{
     line-height: 1.2;
 }
 h1{
-    align-self: center;
-    margin: 10px;
-    padding: 10px;
+
     font-size: 55px;
     font-weight: bold;
-    text-align: center;
     text-decoration: underline;
     color: #373867;
 }
@@ -28,17 +25,29 @@ p{
     font-weight: normal;
     color: #373867;
 }
+.hidden{
+    display: none;
+}
+@media screen and (min-width: 768px) {
 
-@media screen and (min-width: 768px) { 
-    #header-title{
-        font-size: 55px;
+    .side-icons{
+        max-height: 40px;
+    }
+    .main-section{
+        max-height: 1030px;
+    }
+    .main-section-div-1{
+        max-width: 40%;
+    }
+    .main-section-div-2{
+        max-width: 40%;
     }
     .main-section-div-3{
-            max-width: 46%;
-        }
+        max-width: 46%;
+    }
     .work-whit-us-container{
         background-color: lightcoral;
-        flex-wrap: nowrap;
+        /*flex-wrap: nowrap;*/
     }
     .work-whit-us-section-item{
         background-color: lightgreen;
@@ -62,6 +71,15 @@ p{
     }
 }
 @media screen and (min-width: 1024px) {
+    .hidden{
+        display: block;
+    }
+    .side-icons{
+        display: none;
+    }
+    main{
+        margin-left: 20%;
+    }
     .main-section{
         flex-direction: column;
         justify-content: center;
@@ -87,9 +105,19 @@ p{
     }
     .content-trayectory{
         background-color: aqua;
-        flex-direction: row;
+        justify-content: space-between;
     }
     .content-trayectory img{
         order:2;
+        max-width:65%;
+    }
+    .content-trayectory p{
+        max-width:25%;
+    }
+    .title-section-container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 100%;
     }
 }
