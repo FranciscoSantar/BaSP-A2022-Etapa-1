@@ -36,7 +36,7 @@ main{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
-    margin: 2%;
+    margin: 2% 4%;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 345px;
@@ -70,7 +70,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2%;
+    margin: 2% 4%;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 345px;
@@ -91,7 +91,7 @@ main{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 2%;
+    margin: 2% 4%;
     flex-grow: 1;
     flex-shrink: 1;
     flex-basis: 345px;
@@ -152,16 +152,19 @@ main{
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    margin: 10px;
+    justify-content: center;
+    align-items: center;
 }
 .work-whit-us-section-item h4{
     padding: 10px;
-    height: 40px;
+    height: 50px;
+    margin: 5px;
 }
 .work-whit-us-section-item img{
     width: 40%;
     margin: auto;
     order:-1;
+    margin: 5px;
 }
 .work-whit-us-section-item p{
     padding: 5px;
@@ -181,7 +184,7 @@ main{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content:center
+    justify-content:space-around;
 }
 .functions-content img{
     border-radius: 10px;
@@ -261,7 +264,6 @@ main{
     border-radius: 5px;
     border-width: 0px;
     color: #A3A4B9;
-    align-self: end;
 }
 .contact-form-send-button:hover{
     background-color: #373867;
@@ -282,7 +284,7 @@ main{
 }
 .title-section-container{
     width: 100%;
-    margin: 20px;
+    margin: 20px 30px;
 }
 .title-section-container img{
     width: 80%;
@@ -307,7 +309,9 @@ main{
     justify-content: space-between;
 }
 .lists-section-list{
-    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .lists-section-list ol{
     padding: 10px;
@@ -320,7 +324,10 @@ main{
     color:#373867;
 }
 .lists-section-list ul{
-    padding: 20px;
+    padding: 10px;
     list-style-type:disc;
     list-style-position: inside;
+}
+.title-unordered{
+    align-self: center;
 }
