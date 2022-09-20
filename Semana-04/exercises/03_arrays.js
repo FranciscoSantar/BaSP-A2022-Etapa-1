@@ -41,4 +41,4 @@ slice).*/
 var months2=["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio",
             "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
 var someMonths=months2.slice(4,11);
-console.log("The array with the months from May to November is:",someMonths);
+console.log("ex-03g: The array with the months from May to November is:",someMonths);

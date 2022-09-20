@@ -16,8 +16,12 @@ I made the HTML document of the Trackgenix's landing page to define the structur
 
 ## Week 02
 In this week I made a sheet of style for the HTML of week 01. **This page isn´t responsive** i.e. this page doesn't have any flexbox property on it, is made for a laptop screen only
+
 ## Week 03
 In the third week I made the website of Trackgenix totally responsive for smartphones, tablets and laptops. For this I used the layout model of CSS called *Flexbox*. You can see this page [here](https://franciscosantar.github.io/BaSP-A2022-Etapa-1/Semana-03/index.html)
+
+## Week 04
+In this week we had an introduction to the programming language "JavaScript". We learned about variables, conditionals, loops and functions. You can see the problems I solved clicking [here](https://franciscosantar.github.io/BaSP-A2022-Etapa-1/Semana-04/index.html)
 
 **Author**: SANTARELLI,Francisco
 
