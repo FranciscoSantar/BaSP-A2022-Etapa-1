@@ -1,0 +1,55 @@
+.container{
+    margin: auto;
+    max-width: 50%;
+    background-color: #d9d9d9;
+    border: 2px solid #373867;
+    margin-bottom: 10px;
+}
+.logInContainer{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+}
+.logInContainer p{
+    text-align: center;
+    margin: 20px 0px 40px 0px;
+}
+#logInHeader{
+    font-size: 30px;
+    font-weight: 700;
+    color: #373867;
+    margin: auto;
+    padding: 10px;
+}
+#logInForm{
+    display: flex;
+    flex-direction: column;
+}
+#logInForm input{
+    padding: 5px;
+    margin: 10px;
+}
+#logInForm label{
+    font-size: 20px;
+    font-weight: normal;
+    color: #373867;
+}
+#sumbitButton{
+    width: 20%;
+    align-self: flex-end;
+    height: 30px;
+    border: none;
+    background-color: #AACE9B;
+    color: #373867;
+}
+#sumbitButton:hover{
+    background-color: #373867;
+    color: #FFF;
+    border: 1px solid white;
+}
+#logoBack{
+    width: 60%;
+    margin: auto;
+    position: relative;
+    bottom: 0px;
+}
