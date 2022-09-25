@@ -32,3 +32,16 @@
     color: #FFF;
     border: 1px solid white;
 }
+.green-border{
+    border: 3px solid darkgreen;
+}
+.red-border{
+    border: 3px solid darkred;
+}
+.error-text{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    color: darkred;
+}

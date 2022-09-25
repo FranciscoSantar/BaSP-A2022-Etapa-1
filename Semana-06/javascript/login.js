@@ -36,7 +36,7 @@ window.onload = function () {
             return true;
         }
     }
-//------------------------------------------------------------------------
+ //------------------------------------------------------------------------
     function checkEmail (){
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
         if (email.value.length==0){
@@ -63,9 +63,9 @@ window.onload = function () {
         }
         else {
             for (var i=0;i<password.value.length;i++){
-                if (password.value.charCodeAt(i) < 48 || password.value.charCodeAt(i) > 122 ||
-                (password.value.charCodeAt(i) > 57 && password.value.charCodeAt(i) < 65) ||
-                (password.value.charCodeAt(i) > 90 && password.value.charCodeAt(i) < 97)){
+                if (password.value[i] < '0' || password.value[i] > 'z' ||
+                (password.value[i] > '9' && password.value[i] < 'A') ||
+                (password.value[i] > 'Z' && password.value[i] < 'a')){
                     password.classList.add("red-border");
                     errorParagraphPassword.textContent = "Wrong format of the Password, please fix it.";
                     errorParagraphPassword.classList.add("error-text");
@@ -75,8 +75,6 @@ window.onload = function () {
             }
         }
         password.classList.add("green-border");
-        console.log(password.value.length)
-        console.log(email.value.length)
         return true;
     }
 }
