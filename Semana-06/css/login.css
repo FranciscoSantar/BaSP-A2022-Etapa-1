@@ -10,10 +10,7 @@
     flex-direction: column;
     margin: 15px;
 }
-.logInContainer p{
-    text-align: center;
-    margin: 20px 0px 40px 0px;
-}
+
 #logInHeader{
     font-size: 30px;
     font-weight: 700;
@@ -27,7 +24,7 @@
 }
 #logInForm input{
     padding: 5px;
-    margin: 10px;
+    margin: 0px;
 }
 #logInForm label{
     font-size: 20px;
@@ -52,4 +49,17 @@
     margin: auto;
     position: relative;
     bottom: 0px;
+}
+.green-border{
+    border: 3px solid darkgreen;
+}
+.red-border{
+    border: 3px solid darkred;
+}
+.error-text{
+    font-size: 10px;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    color: darkred;
 }
