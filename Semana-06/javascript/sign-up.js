@@ -1,5 +1,4 @@
 window.onload = function () {
-    var signUpForm = document.getElementById("sign-up-form");
     var nameEmployee = document.getElementById("sign-up-name");
     var lastnameEmployee = document.getElementById("sign-up-lastname");
     var dniEmployee = document.getElementById("sign-up-dni");
@@ -12,16 +11,18 @@ window.onload = function () {
     var passwordEmployee = document.getElementById("sign-up-password");
     var passwordRepeatEmployee = document.getElementById("sign-up-password-repeat");
     var sumbit = document.getElementById("sumbit-button");
-    var labels = document.getElementsByTagName("label");
+    var divs = document.getElementsByClassName("form-field");
     var errorParagraphNameEmployee = document.createElement('p');
     var errorParagraphLastnameEmployee = document.createElement('p');
     var errorParagraphDniEmployee = document.createElement('p');
+    var errorParagraphDateEmployee = document.createElement('p');
     var errorParagraphPhoneEmployee = document.createElement('p');
     var errorParagraphAddressEmployee = document.createElement('p');
     var errorParagraphLocationEmployee = document.createElement('p');
     var errorParagraphPostalCodeEmployee = document.createElement('p');
     var errorParagraphEmailEmployee = document.createElement('p');
     var errorParagraphPasswordEmployee = document.createElement('p');
+    var errorParagraphPasswordRepeatEmployee = document.createElement('p');
 
     nameEmployee.onblur = function (){
         checkNameEmployee ();
@@ -45,6 +46,14 @@ window.onload = function () {
     dniEmployee.onfocus = function (){
         dniEmployee.classList.remove("green-border","red-border");
         errorParagraphDniEmployee.remove();
+    }
+
+    dateEmployee.onblur = function (){
+        checkDateEmployee ();
+    }
+    dateEmployee.onfocus = function (){
+        dateEmployee.classList.remove("green-border","red-border");
+        errorParagraphDateEmployee.remove();
     }
 
     phoneEmployee.onblur = function (){
@@ -105,32 +114,46 @@ window.onload = function () {
 
     sumbit.onclick = function (e){
         e.preventDefault();
+        var errorMesagge="";
+        var anyError=false;
         if (!checkNameEmployee()){
-            alert("The Name has an error. Please fix it");
+            errorMesagge+="The Name has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkLastnameEmployee()){
-            alert("The Lastame has an error. Please fix it");
+            errorMesagge+="The Lastname has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkDniEmployee()){
-            alert("The DNI has an error. Please fix it");
+            errorMesagge+="The DNI has an error. Please fix it\n";
+            anyError=true;
         }
         if (!checkPhoneEmployee()){
-            alert("The Phone has an error. Please fix it");
+            errorMesagge+="The Phone has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkLocationEmployee()){
-            alert("The Location has an error. Please fix it");
+            errorMesagge+="The Location has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkPostalCodeEmployee()){
-            alert("The Postal Code has an error. Please fix it");
+            errorMesagge+="The Postal Code has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkEmailEmployee()){
-            alert("The Email has an error. Please fix it");
+            errorMesagge+="The Email has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkPasswordEmployee()){
-            alert("The Password has an error. Please fix it");
+            errorMesagge+="The Password has an error. Please fix it\n"
+            anyError=true;
         }
         if (!checkPasswordRepeatEmployee()){
-            alert("The Repeat Password has an error. Please fix it");
+            errorMesagge+="The Repeat password has an error. Please fix it\n"
+            anyError=true;
+        }
+        if (anyError){
+            alert(errorMesagge);
             return false;
         }
         else{
@@ -150,13 +173,14 @@ window.onload = function () {
         }
         if(!isAlpha(nameEmployee.value) || nameEmployee.value.length<3){
             nameEmployee.classList.add("red-border");
-            addErrorText(errorParagraphNameEmployee,labels[1],"Name");
+            errorParagraphNameEmployee.textContent = "The name is wrong. Only letters and a length of 3 characters";
+            errorParagraphNameEmployee.classList.add("error-text");
+            divs[0].appendChild(errorParagraphNameEmployee);
             return false;
         }
         nameEmployee.classList.add("green-border");
         return true;
     }
-
     function checkLastnameEmployee(){
         if (lastnameEmployee.value.length==0){
             lastnameEmployee.classList.add("red-border");
@@ -164,7 +188,9 @@ window.onload = function () {
         }
         if(!isAlpha(lastnameEmployee.value) || lastnameEmployee.value.length<3){
             lastnameEmployee.classList.add("red-border");
-            addErrorText(errorParagraphLastnameEmployee,labels[2],"Lastname");
+            errorParagraphLastnameEmployee.textContent = "The Lastname is wrong. Only letters and a length of 3 characters";
+            errorParagraphLastnameEmployee.classList.add("error-text");
+            divs[1].appendChild(errorParagraphLastnameEmployee);
             return false;
         }
         lastnameEmployee.classList.add("green-border");
@@ -177,10 +203,30 @@ window.onload = function () {
         }
         if(!isNumber(dniEmployee.value) || dniEmployee.value.length<7){
             dniEmployee.classList.add("red-border");
-            addErrorText(errorParagraphDniEmployee,labels[3],"Dni");
+            errorParagraphDniEmployee.textContent = "The DNI is wrong. Only number and a length of 7 characters or more";
+            errorParagraphDniEmployee.classList.add("error-text");
+            divs[2].appendChild(errorParagraphDniEmployee);
             return false;
         }
         dniEmployee.classList.add("green-border");
+        return true;
+    }
+
+    function checkDateEmployee (){
+        var bornYear = dateEmployee.value.slice(0,4);
+        var actualYear = new Date().getFullYear();
+        if (bornYear==""){
+            dateEmployee.classList.add("red-border");
+            return false;
+        }
+        if (actualYear-bornYear<18){
+            dateEmployee.classList.add("red-border");
+            errorParagraphDateEmployee.textContent = "The Employee must be over 18 years old";
+            errorParagraphDateEmployee.classList.add("error-text");
+            divs[3].appendChild(errorParagraphDateEmployee);
+            return false;
+        }
+        dateEmployee.classList.add("green-border");
         return true;
     }
 
@@ -191,7 +237,9 @@ window.onload = function () {
         }
         if(!isNumber(phoneEmployee.value) || phoneEmployee.value.length!=10){
             phoneEmployee.classList.add("red-border");
-            addErrorText(errorParagraphPhoneEmployee,labels[5],"Phone");
+            errorParagraphPhoneEmployee.textContent = "The Phone is wrong. Only numbers and a length of 10 characters";
+            errorParagraphPhoneEmployee.classList.add("error-text");
+            divs[4].appendChild(errorParagraphPhoneEmployee);
             return false;
         }
         phoneEmployee.classList.add("green-border");
@@ -205,9 +253,11 @@ window.onload = function () {
         }
         if (!isAlphaNum(addressEmployee.value) || addressEmployee.value.length <5 ||
         addressEmployee.value.indexOf(" ")==-1){
-
             addressEmployee.classList.add("red-border");
-            addErrorText(errorParagraphAddressEmployee,labels[6],"Address");
+            errorParagraphAddressEmployee.textContent =
+            "The Address is wrong. Letters and numbers allowed and must have 5 characters and a space";
+            errorParagraphAddressEmployee.classList.add("error-text");
+            divs[5].appendChild(errorParagraphAddressEmployee);
             return false;
         }
         addressEmployee.classList.add("green-border");
@@ -221,7 +271,10 @@ window.onload = function () {
         }
         if (!isAlphaNum(locationEmployee.value) || locationEmployee.value.length <3){
             locationEmployee.classList.add("red-border");
-            addErrorText(errorParagraphLocationEmployee,labels[7],"Location");
+            errorParagraphLocationEmployee.textContent = 
+            "The Location is wrong. Letters and numbers allowed and must have 3 letters or more";
+            errorParagraphLocationEmployee.classList.add("error-text");
+            divs[6].appendChild(errorParagraphLocationEmployee);
             return false;
         }
         locationEmployee.classList.add("green-border");
@@ -236,7 +289,10 @@ window.onload = function () {
         if (!isNumber(postalCodeEmployee.value) || postalCodeEmployee.value.length < 4 ||
         postalCodeEmployee.value.length > 5){
             postalCodeEmployee.classList.add("red-border");
-            addErrorText(errorParagraphPostalCodeEmployee,labels[8],"Postal Code");
+            errorParagraphPostalCodeEmployee.textContent =
+            "The Postal Colde is wrong. Only numbers and must have a length of 4 or 5 characters";
+            errorParagraphPostalCodeEmployee.classList.add("error-text");
+            divs[7].appendChild(errorParagraphPostalCodeEmployee);
             return false;
         }
         postalCodeEmployee.classList.add("green-border");
@@ -251,7 +307,9 @@ window.onload = function () {
         }
         if (!emailExpression.test(emailEmployee.value)){
             emailEmployee.classList.add("red-border");
-            addErrorText(errorParagraphEmailEmployee,labels[9],"Email");
+            errorParagraphEmailEmployee.textContent = "The Email is wrong.";
+            errorParagraphEmailEmployee.classList.add("error-text");
+            divs[8].appendChild(errorParagraphEmailEmployee);
             return false;
         }
         else{
@@ -259,7 +317,6 @@ window.onload = function () {
             return true;
         }
     }
-
     function checkPasswordEmployee (){
         if (passwordEmployee.value.length==0){
             passwordEmployee.classList.add("red-border");
@@ -267,7 +324,10 @@ window.onload = function () {
         }
         if (!isAlphaNum(passwordEmployee.value) || passwordEmployee.value.length<8){
             passwordEmployee.classList.add("red-border");
-            addErrorText(errorParagraphPasswordEmployee,labels[10],"Password");
+            errorParagraphPasswordEmployee.textContent =
+            "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            errorParagraphPasswordEmployee.classList.add("error-text");
+            divs[9].appendChild(errorParagraphPasswordEmployee);
             return false;
         }
         passwordEmployee.classList.add("green-border");
@@ -281,7 +341,10 @@ window.onload = function () {
         }
         if (!isAlphaNum(passwordRepeatEmployee.value) || passwordRepeatEmployee.value.length<8){
             passwordRepeatEmployee.classList.add("red-border");
-            addErrorText(errorParagraphPasswordEmployee,sumbit,"Password");
+            errorParagraphPasswordRepeatEmployee.textContent =
+            "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            errorParagraphPasswordRepeatEmployee.classList.add("error-text");
+            divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
             return false;
         }
         if (passwordEmployee.value === passwordRepeatEmployee.value){
@@ -289,10 +352,11 @@ window.onload = function () {
             return true;
         }
         passwordRepeatEmployee.classList.add("purple-border");
-        addErrorText(errorParagraphPasswordEmployee,sumbit,"wrongPassword");
+        errorParagraphPasswordRepeatEmployee.textContent = "The passwords don't match";
+        errorParagraphPasswordRepeatEmployee.classList.add("error-text");
+        divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
         return false;
     }
-    //Tambien se podria stringInput.toUpperCase() y chequear entre 'A' y 'Z', no se que opcion seria mejor
     function isAlpha(stringInput){
         for (var i=0 ; i<stringInput.length ; i++){
             if ( stringInput[i]<'A' || stringInput[i] >'z' || (stringInput[i]>'Z' && stringInput[i]<'a')){
@@ -327,16 +391,5 @@ window.onload = function () {
         var month = date.slice(5,7);
         var year = date.slice(0,4);
         return (day+"/"+month+"/"+year);
-    }
-    function addErrorText(paragraph,label,topic){
-        if (topic ==="wrongPassword"){
-            paragraph.textContent = "The passwords don't match, please fix it.";
-        }
-        else{
-            paragraph.textContent = "Wrong format of the " +topic+" , please fix it.";
-        }
-
-        paragraph.classList.add("error-text");
-        signUpForm.insertBefore(paragraph, label);
     }
 }

@@ -1,6 +1,5 @@
 window.onload = function () {
-    var form = document.getElementById("login-form");
-    var label = document.getElementsByTagName("label");
+    var divs = document.getElementsByClassName("form-field-login");
     var email = document.getElementById("login-email");
     var password = document.getElementById("login-password");
     var sumbit = document.getElementById("sumbit-button");
@@ -23,12 +22,18 @@ window.onload = function () {
     }
     sumbit.onclick = function (e){
         e.preventDefault();
+        var errorMesagge="";
+        var anyError=false;
         if (!checkEmail()){
-            alert("The Email has an error. Please fix it");
-            return false;
+            errorMesagge+="The Email has an error. Please fix it\n"
+            anyError=true;
         }
         if(!checkPassword()){
-            alert("The Password has an error. Please fix it");
+            errorMesagge+="The Password has an error. Please fix it\n"
+            anyError=true;
+        }
+        if (anyError){
+            alert(errorMesagge);
             return false;
         }
         else{
@@ -47,7 +52,7 @@ window.onload = function () {
             email.classList.add("red-border");
             errorParagraphEmail.textContent = "Wrong format of the Email, please fix it.";
             errorParagraphEmail.classList.add("error-text");
-            form.insertBefore(errorParagraphEmail, label[1]);
+            divs[0].appendChild(errorParagraphEmail);
             return false;
         }
         else{
@@ -61,20 +66,26 @@ window.onload = function () {
             password.classList.add("red-border");
             return false;
         }
-        else {
-            for (var i=0;i<password.value.length;i++){
-                if (password.value[i] < '0' || password.value[i] > 'z' ||
-                (password.value[i] > '9' && password.value[i] < 'A') ||
-                (password.value[i] > 'Z' && password.value[i] < 'a')){
-                    password.classList.add("red-border");
-                    errorParagraphPassword.textContent = "Wrong format of the Password, please fix it.";
-                    errorParagraphPassword.classList.add("error-text");
-                    form.insertBefore(errorParagraphPassword, sumbit);
-                    return false;
-                }
-            }
+        if (!isAlphaNum(password.value) || password.value.length<8){
+            password.classList.add("red-border");
+            errorParagraphPassword.textContent = "Wrong format of the Password, please fix it.";
+            errorParagraphPassword.classList.add("error-text");
+            divs[1].appendChild(errorParagraphPassword);
+            return false;
         }
         password.classList.add("green-border");
+        return true;
+    }
+
+    function isAlphaNum (stringInput){
+        stringInput=stringInput.replaceAll(" ","");
+        for (var i=0;i<stringInput.length;i++){
+            if (stringInput[i] < '0' || stringInput[i] > 'z' ||
+            (stringInput[i] > '9' && stringInput[i] < 'A') ||
+            (stringInput[i] > 'Z' && stringInput[i] < 'a')){
+                return false;
+            }
+        }
         return true;
     }
 }

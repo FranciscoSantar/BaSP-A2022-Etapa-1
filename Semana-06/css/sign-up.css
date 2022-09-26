@@ -3,12 +3,19 @@
     max-width: 70%;
     background-color: #d9d9d9;
     border: 2px solid #373867;
+    border-radius: 20px;
     margin-bottom: 10px;
+
 }
 .sign-up-container{
     display: flex;
     flex-direction: column;
     margin: 15px;
+}
+.form-field{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
 }
 #sign-up-header{
     margin-bottom: 20px;
@@ -17,14 +24,17 @@
 #sign-up-form{
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
 }
 #sign-up-form input{
-    width: 100%;
+    width: 90%;
     padding: 5px;
     margin:3px 0px;
+    border-radius: 5px;
 }
 #sign-up-form label{
-    width: 100%;
+    width: 90%;
     padding: 5px;
     margin:3px 0px;
     font-size: 20px;
@@ -45,18 +55,16 @@
     border: 1px solid white;
 }
 .green-border{
-    border: 3px solid darkgreen;
+    border: 2px solid darkgreen;
 }
 .red-border{
-    border: 3px solid darkred;
+    border: 2px solid darkred;
 }
 .purple-border{
-    border: 3px solid darkmagenta;
+    border: 2px solid darkmagenta;
 }
 .error-text{
     font-size: 10px;
-    margin-left: 47%;
-    padding: 0px;
     text-align: left;
     color: darkred;
 }
