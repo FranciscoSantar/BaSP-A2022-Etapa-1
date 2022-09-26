@@ -181,4 +181,7 @@ p{
     .work-whit-us-section-item p{
         max-width: 60%;
     }
+    #sign-up-form input,#sign-up-form label{
+        max-width: 45%;
+    }
 }

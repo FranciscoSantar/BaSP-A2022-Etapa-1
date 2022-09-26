@@ -1,6 +1,6 @@
 .container{
     margin: auto;
-    max-width: 50%;
+    max-width: 70%;
     background-color: #d9d9d9;
     border: 2px solid #373867;
     margin-bottom: 10px;
@@ -10,14 +10,26 @@
     flex-direction: column;
     margin: 15px;
 }
+#sign-up-header{
+    margin-bottom: 20px;
+    padding: 10px;
+}
 #sign-up-form{
     display: flex;
     flex-wrap: wrap;
 }
-#sign-up-form input,#sign-up-form label{
+#sign-up-form input{
     width: 100%;
     padding: 5px;
     margin:3px 0px;
+}
+#sign-up-form label{
+    width: 100%;
+    padding: 5px;
+    margin:3px 0px;
+    font-size: 20px;
+    font-family: 'Roboto',sans-serif;
+    color: #373867;
 }
 #sumbit-button{
     width: 30%;
@@ -38,9 +50,12 @@
 .red-border{
     border: 3px solid darkred;
 }
+.purple-border{
+    border: 3px solid darkmagenta;
+}
 .error-text{
     font-size: 10px;
-    margin: 0px;
+    margin-left: 47%;
     padding: 0px;
     text-align: left;
     color: darkred;
