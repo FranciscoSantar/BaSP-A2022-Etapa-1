@@ -68,7 +68,8 @@ window.onload = function () {
         }
         if (!isAlphaNum(password.value) || password.value.length<8){
             password.classList.add("red-border");
-            errorParagraphPassword.textContent = "Wrong format of the Password, please fix it.";
+            errorParagraphPassword.textContent =
+            "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
             errorParagraphPassword.classList.add("error-text");
             divs[1].appendChild(errorParagraphPassword);
             return false;
