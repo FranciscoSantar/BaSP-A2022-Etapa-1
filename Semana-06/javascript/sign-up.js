@@ -114,43 +114,43 @@ window.onload = function () {
 
     sumbit.onclick = function (e){
         e.preventDefault();
-        var errorMesagge="";
-        var anyError=false;
-        if (!checkNameEmployee()){
-            errorMesagge+="The Name has an error. Please fix it\n"
-            anyError=true;
+        var errorMesagge = "";
+        var anyError = false;
+        if (!checkNameEmployee ()){
+            errorMesagge += "The Name has an error. Please fix it\n"
+            anyError = true;
         }
-        if (!checkLastnameEmployee()){
-            errorMesagge+="The Lastname has an error. Please fix it\n"
-            anyError=true;
+        if (!checkLastnameEmployee ()){
+            errorMesagge += "The Lastname has an error. Please fix it\n"
+            anyError = true;
         }
-        if (!checkDniEmployee()){
-            errorMesagge+="The DNI has an error. Please fix it\n";
-            anyError=true;
+        if (!checkDniEmployee ()){
+            errorMesagge += "The DNI has an error. Please fix it\n";
+            anyError = true;
         }
-        if (!checkPhoneEmployee()){
-            errorMesagge+="The Phone has an error. Please fix it\n"
-            anyError=true;
+        if (!checkPhoneEmployee ()){
+            errorMesagge += "The Phone has an error. Please fix it\n"
+            anyError = true;
         }
         if (!checkLocationEmployee()){
-            errorMesagge+="The Location has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Location has an error. Please fix it\n"
+            anyError = true;
         }
         if (!checkPostalCodeEmployee()){
-            errorMesagge+="The Postal Code has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Postal Code has an error. Please fix it\n"
+            anyError = true;
         }
         if (!checkEmailEmployee()){
-            errorMesagge+="The Email has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Email has an error. Please fix it\n"
+            anyError = true;
         }
         if (!checkPasswordEmployee()){
-            errorMesagge+="The Password has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Password has an error. Please fix it\n"
+            anyError = true;
         }
         if (!checkPasswordRepeatEmployee()){
-            errorMesagge+="The Repeat password has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Repeat password has an error. Please fix it\n"
+            anyError = true;
         }
         if (anyError){
             alert(errorMesagge);
@@ -167,7 +167,7 @@ window.onload = function () {
     }
     //------------------------------------------------------------------------
     function checkNameEmployee(){
-        if (nameEmployee.value.length==0){
+        if (nameEmployee.value.length == 0){
             nameEmployee.classList.add("red-border");
             return false;
         }
@@ -182,7 +182,7 @@ window.onload = function () {
         return true;
     }
     function checkLastnameEmployee(){
-        if (lastnameEmployee.value.length==0){
+        if (lastnameEmployee.value.length == 0){
             lastnameEmployee.classList.add("red-border");
             return false;
         }
@@ -197,7 +197,7 @@ window.onload = function () {
         return true;
     }
     function checkDniEmployee (){
-        if (dniEmployee.value.length==0){
+        if (dniEmployee.value.length == 0){
             dniEmployee.classList.add("red-border");
             return false;
         }
@@ -215,7 +215,7 @@ window.onload = function () {
     function checkDateEmployee (){
         var bornYear = dateEmployee.value.slice(0,4);
         var actualYear = new Date().getFullYear();
-        if (bornYear==""){
+        if (bornYear == ""){
             dateEmployee.classList.add("red-border");
             return false;
         }
@@ -231,11 +231,11 @@ window.onload = function () {
     }
 
     function checkPhoneEmployee (){
-        if (phoneEmployee.value.length==0){
+        if (phoneEmployee.value.length == 0){
             phoneEmployee.classList.add("red-border");
             return false;
         }
-        if(!isNumber(phoneEmployee.value) || phoneEmployee.value.length!=10){
+        if(!isNumber(phoneEmployee.value) || phoneEmployee.value.length != 10){
             phoneEmployee.classList.add("red-border");
             errorParagraphPhoneEmployee.textContent = "The Phone is wrong. Only numbers and a length of 10 characters";
             errorParagraphPhoneEmployee.classList.add("error-text");
@@ -247,12 +247,12 @@ window.onload = function () {
     }
 
     function checkAddressEmployee (){
-        if (addressEmployee.value.length==0){
+        if (addressEmployee.value.length == 0){
             addressEmployee.classList.add("red-border");
             return false;
         }
-        if (!isAlphaNum(addressEmployee.value) || addressEmployee.value.length <5 ||
-        addressEmployee.value.indexOf(" ")==-1){
+        if (!isAlphaNum(addressEmployee.value) || addressEmployee.value.length < 5 ||
+        addressEmployee.value.indexOf(" ") == -1){
             addressEmployee.classList.add("red-border");
             errorParagraphAddressEmployee.textContent =
             "The Address is wrong. Letters and numbers allowed and must have 5 characters and a space";
@@ -265,13 +265,13 @@ window.onload = function () {
     }
 
     function checkLocationEmployee (){
-        if (locationEmployee.value.length==0){
+        if (locationEmployee.value.length == 0){
             locationEmployee.classList.add("red-border");
             return false;
         }
-        if (!isAlphaNum(locationEmployee.value) || locationEmployee.value.length <3){
+        if (!isAlphaNum(locationEmployee.value) || locationEmployee.value.length < 3){
             locationEmployee.classList.add("red-border");
-            errorParagraphLocationEmployee.textContent = 
+            errorParagraphLocationEmployee.textContent =
             "The Location is wrong. Letters and numbers allowed and must have 3 letters or more";
             errorParagraphLocationEmployee.classList.add("error-text");
             divs[6].appendChild(errorParagraphLocationEmployee);
@@ -282,7 +282,7 @@ window.onload = function () {
     }
 
     function checkPostalCodeEmployee (){
-        if (postalCodeEmployee.value.length==0){
+        if (postalCodeEmployee.value.length == 0){
             postalCodeEmployee.classList.add("red-border");
             return false;
         }
@@ -318,11 +318,11 @@ window.onload = function () {
         }
     }
     function checkPasswordEmployee (){
-        if (passwordEmployee.value.length==0){
+        if (passwordEmployee.value.length == 0){
             passwordEmployee.classList.add("red-border");
             return false;
         }
-        if (!isAlphaNum(passwordEmployee.value) || passwordEmployee.value.length<8){
+        if (!isAlphaNum(passwordEmployee.value) || passwordEmployee.value.length < 8){
             passwordEmployee.classList.add("red-border");
             errorParagraphPasswordEmployee.textContent =
             "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
@@ -335,11 +335,11 @@ window.onload = function () {
     }
 
     function checkPasswordRepeatEmployee (){
-        if (passwordRepeatEmployee.value.length==0){
+        if (passwordRepeatEmployee.value.length == 0){
             passwordRepeatEmployee.classList.add("red-border");
             return false;
         }
-        if (!isAlphaNum(passwordRepeatEmployee.value) || passwordRepeatEmployee.value.length<8){
+        if (!isAlphaNum(passwordRepeatEmployee.value) || passwordRepeatEmployee.value.length < 8){
             passwordRepeatEmployee.classList.add("red-border");
             errorParagraphPasswordRepeatEmployee.textContent =
             "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
@@ -351,7 +351,7 @@ window.onload = function () {
             passwordRepeatEmployee.classList.add("green-border");
             return true;
         }
-        passwordRepeatEmployee.classList.add("purple-border");
+        passwordRepeatEmployee.classList.add("red-border");
         errorParagraphPasswordRepeatEmployee.textContent = "The passwords don't match";
         errorParagraphPasswordRepeatEmployee.classList.add("error-text");
         divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
@@ -360,7 +360,7 @@ window.onload = function () {
     function isAlpha(stringInput){
         stringInput=stringInput.replaceAll(" ","");
         for (var i=0 ; i<stringInput.length ; i++){
-            if ( stringInput[i]<'A' || stringInput[i] >'z' || (stringInput[i]>'Z' && stringInput[i]<'a')){
+            if ( stringInput[i] < 'A' || stringInput[i] > 'z' || (stringInput[i] > 'Z' && stringInput[i] < 'a')){
                 return false;
             }
         }
@@ -369,7 +369,7 @@ window.onload = function () {
 
     function isNumber(numberInput){
         for (var i=0 ; i<numberInput.length ; i++){
-            if ( numberInput[i]<'0' || numberInput[i] >'9'){
+            if ( numberInput[i] < '0' || numberInput[i] > '9'){
                 return false;
             }
         }
@@ -378,7 +378,7 @@ window.onload = function () {
 
     function isAlphaNum (stringInput){
         stringInput=stringInput.replaceAll(" ","");
-        for (var i=0;i<stringInput.length;i++){
+        for (var i=0 ; i<stringInput.length ; i++){
             if (stringInput[i] < '0' || stringInput[i] > 'z' ||
             (stringInput[i] > '9' && stringInput[i] < 'A') ||
             (stringInput[i] > 'Z' && stringInput[i] < 'a')){
@@ -391,6 +391,6 @@ window.onload = function () {
         var day = date.slice(8);
         var month = date.slice(5,7);
         var year = date.slice(0,4);
-        return (day+"/"+month+"/"+year);
+        return (day + "/" + month + "/" + year);
     }
 }

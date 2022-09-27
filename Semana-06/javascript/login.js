@@ -22,15 +22,15 @@ window.onload = function () {
     }
     sumbit.onclick = function (e){
         e.preventDefault();
-        var errorMesagge="";
-        var anyError=false;
+        var errorMesagge = "";
+        var anyError = false;
         if (!checkEmail()){
-            errorMesagge+="The Email has an error. Please fix it\n"
+            errorMesagge += "The Email has an error. Please fix it\n"
             anyError=true;
         }
         if(!checkPassword()){
-            errorMesagge+="The Password has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Password has an error. Please fix it\n"
+            anyError = true;
         }
         if (anyError){
             alert(errorMesagge);
@@ -44,7 +44,7 @@ window.onload = function () {
  //------------------------------------------------------------------------
     function checkEmail (){
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-        if (email.value.length==0){
+        if (email.value.length == 0){
             email.classList.add("red-border");
             return false;
         }

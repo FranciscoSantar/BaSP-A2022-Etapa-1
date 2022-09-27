@@ -20,7 +20,6 @@ window.onload = function() {
 
     emailContact.onblur = function (){
         checkEmailContact ();
-        console.log(selectContact.value)
     }
     emailContact.onfocus = function (){
         emailContact.classList.remove("green-border","red-border");
@@ -45,23 +44,23 @@ window.onload = function() {
 
     sumbit.onclick = function (e){
         e.preventDefault();
-        var errorMesagge="";
-        var anyError=false;
+        var errorMesagge = "";
+        var anyError = false;
         if (!checkNameContact()){
-            errorMesagge+="The Name has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Name has an error. Please fix it\n"
+            anyError = true;
         }
         if(!checkEmailContact()){
-            errorMesagge+="The Email has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Email has an error. Please fix it\n"
+            anyError = true;
         }
         if(!checkMessageContact()){
-            errorMesagge+="The Message has an error. Please fix it\n"
-            anyError=true;
+            errorMesagge += "The Message has an error. Please fix it\n"
+            anyError = true;
         }
         if(!checkSelectContact()){
-            errorMesagge+="You have to pick an Area to contact\n"
-            anyError=true;
+            errorMesagge += "You have to pick an Area to contact\n"
+            anyError = true;
         }
         if (anyError){
             alert(errorMesagge);
@@ -75,7 +74,7 @@ window.onload = function() {
     }
 
     function checkNameContact (){
-        if (nameContact.value.length==0){
+        if (nameContact.value.length == 0){
             nameContact.classList.add("red-border");
             return false;
         }
@@ -93,7 +92,7 @@ window.onload = function() {
 
     function checkEmailContact (){
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
-        if (emailContact.value.length==0){
+        if (emailContact.value.length == 0){
             emailContact.classList.add("red-border");
             return false;
         }
@@ -111,7 +110,7 @@ window.onload = function() {
     }
 
     function checkSelectContact (){
-        if (selectContact.value==='default'){
+        if (selectContact.value === 'default'){
             selectContact.classList.add("red-border");
             errorParagraphSelectContact.textContent = "You have to select an area to contact";
             errorParagraphSelectContact.classList.add("error-text");
@@ -123,7 +122,7 @@ window.onload = function() {
     }
 
     function checkMessageContact (){
-        if (messageContact.value.length==0){
+        if (messageContact.value.length == 0){
             messageContact.classList.add("red-border");
             return false;
         }
@@ -141,7 +140,7 @@ window.onload = function() {
 
     function isAlphaNum (stringInput){
         stringInput=stringInput.replaceAll(" ","");
-        for (var i=0;i<stringInput.length;i++){
+        for (var i=0 ; i<stringInput.length ; i++){
             if (stringInput[i] < " "){
                 return false;
             }

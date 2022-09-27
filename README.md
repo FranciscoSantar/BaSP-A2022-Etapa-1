@@ -10,7 +10,7 @@ GitaTech provides software development to others companies
 
 The model of this page was designed in Figma, you can find it [here](https://www.figma.com/file/nNTIPd7HwRNBoqBnlLO4Vl/UI-kit-RR-(BaSP)-B?node-id=1275%3A5438)
 
-![](semana-06/assets/landing.png)
+![](Semana-06/assets/landing.png)
 
 
 ## Week 01
