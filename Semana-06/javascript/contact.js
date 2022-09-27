@@ -31,7 +31,7 @@ window.onload = function() {
     }
     selectContact.onfocus = function (){
         selectContact.classList.remove("green-border","red-border");
-        errorParagraphMessageContact.remove();
+        errorParagraphSelectContact.remove();
     }
 
     messageContact.onblur = function (){

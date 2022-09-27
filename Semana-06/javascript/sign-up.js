@@ -109,7 +109,7 @@ window.onload = function () {
     }
     passwordRepeatEmployee.onfocus = function (){
         passwordRepeatEmployee.classList.remove("green-border","red-border","purple-border");
-        errorParagraphPasswordEmployee.remove();
+        errorParagraphPasswordRepeatEmployee.remove();
     }
 
     sumbit.onclick = function (e){
