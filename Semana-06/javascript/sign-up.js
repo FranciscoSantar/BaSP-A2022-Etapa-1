@@ -358,6 +358,7 @@ window.onload = function () {
         return false;
     }
     function isAlpha(stringInput){
+        stringInput=stringInput.replaceAll(" ","");
         for (var i=0 ; i<stringInput.length ; i++){
             if ( stringInput[i]<'A' || stringInput[i] >'z' || (stringInput[i]>'Z' && stringInput[i]<'a')){
                 return false;

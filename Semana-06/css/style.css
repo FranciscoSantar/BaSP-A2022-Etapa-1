@@ -29,6 +29,17 @@ p{
 .hidden{
     display: none;
 }
+.green-border{
+    border: 2px solid darkgreen;
+}
+.red-border{
+    border: 2px solid darkred;
+}
+.error-text{
+    font-size: 10px;
+    text-align: left;
+    color: darkred;
+}
 @media screen and (min-width: 768px) {
     .side-icons{
         max-height: 1px;

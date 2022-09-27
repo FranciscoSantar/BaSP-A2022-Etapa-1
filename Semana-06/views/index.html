@@ -16,6 +16,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+        <script src="../javascript/contact.js"></script>
     </head>
     <body>
         <header>
@@ -187,16 +188,26 @@
             <section class="contact-section">
                 <h3>Get in touch</h3>
                 <form class="contact-form" action="">
-                    <input class="contact-form-text" type="text" placeholder="Name"/>
-                    <input class="contact-form-text" type="email" placeholder="Email"/>
-                    <select>
-                        <option hidden selected>Resource Area</option>
-                        <option value="rrhh">RRHH</option>
-                        <option value="suport">Suport</option>
-                        <option value="legal">Legal</option>
-                    </select>
-                    <textarea placeholder="Write your comment here"></textarea>
-                    <input class="contact-form-send-button" type="submit" value="Sumbit"/>
+                    <div class="contact-field">
+                        <input class="contact-form-text" id="contact-name" type="text" placeholder="Name"/>
+                    </div>
+                    <div class="contact-field">
+                        <input class="contact-form-text" id="contact-email" type="text" placeholder="Email"/>
+                    </div>
+                    <div class="contact-field">
+                        <select id="contact-select">
+                            <option hidden selected value="default">Resource Area</option>
+                            <option value="RRHH">RRHH</option>
+                            <option value="Systems">Systems</option>
+                            <option value="Commerce">Commerce</option>
+                        </select>
+                    </div>
+                    <div class="contact-field">
+                        <textarea id="contact-message" placeholder="Write your comment here"></textarea>
+                    </div>
+                    <div class="contact-field" id="sumbit-container">
+                        <input class="contact-form-send-button" id="contact-sumbit" type="submit" value="Sumbit"/>
+                    </div>
                 </form>
             </section>
             <section class="title-section">

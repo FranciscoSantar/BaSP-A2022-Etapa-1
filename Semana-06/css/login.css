@@ -1,10 +1,17 @@
+.login-main{
+    background-image: url(../assets/TrackgenixLogo.svg);
+    background-repeat: no-repeat;
+    background-size: 80%;
+    background-position: bottom 0px right 80px;
+}
 .container{
     margin: auto;
-    max-width: 60%;
+    max-width: 90%;
     background-color: #d9d9d9;
     border: 2px solid #373867;
     border-radius: 20px;
-    margin-bottom: 10px;
+    margin-bottom: 150px;
+    margin-top: 50px;
 }
 .login-container{
     display: flex;
@@ -44,6 +51,7 @@
     width: 30%;
     margin-top: 15px;
     align-self: flex-end;
+    border-radius: 5px;
     height: 30px;
     border: none;
     background-color: #AACE9B;
