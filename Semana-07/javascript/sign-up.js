@@ -116,6 +116,7 @@ window.onload = function () {
         e.preventDefault();
         var errorMesagge = "";
         var anyError = false;
+        var urlSignUp = 'https://basp-m2022-api-rest-server.herokuapp.com/signup';
         if (!checkNameEmployee ()){
             errorMesagge += "The Name has an error. Please fix it\n"
             anyError = true;
@@ -125,8 +126,14 @@ window.onload = function () {
         } if (!checkDniEmployee ()){
             errorMesagge += "The DNI has an error. Please fix it\n";
             anyError = true;
-        } if (!checkPhoneEmployee ()){
+        } if (!checkDateEmployee ()){
+            errorMesagge += "The Date has an error. Please fix it\n";
+            anyError = true;
+        }  if (!checkPhoneEmployee ()){
             errorMesagge += "The Phone has an error. Please fix it\n"
+            anyError = true;
+        }if (!checkAddressEmployee ()){
+            errorMesagge += "The Address has an error. Please fix it\n";
             anyError = true;
         } if (!checkLocationEmployee()){
             errorMesagge += "The Location has an error. Please fix it\n"
@@ -147,6 +154,21 @@ window.onload = function () {
             alert(errorMesagge);
             return false;
         } else{
+            urlSignUp = addQueryParamsUrl(
+                        urlSignUp, nameEmployee.value, lastnameEmployee.value, dniEmployee.value, dateEmployee.value,
+                        phoneEmployee.value, addressEmployee.value, locationEmployee.value, postalCodeEmployee.value,
+                        emailEmployee.value, passwordEmployee.value);
+            fetch(urlSignUp)
+            .then(function (response){
+                return response.json();
+            })
+            .then(function (data){
+                if(data.success){
+                    alert("¡Successful Login!\nMessage: "+data.msg);
+                } else{
+                    alert("Sign up Error!\nMessage: "+data.msg);
+                };
+            })
             alert("Name: " + nameEmployee.value + "\nLastname: " + lastnameEmployee.value +
                 "\nDNI: " + dniEmployee.value + "\nBirth Date: " + getDate(dateEmployee.value) +
                 "\nPhone: " + phoneEmployee.value + "\nAddress: " + addressEmployee.value +
@@ -160,7 +182,7 @@ window.onload = function () {
         if (nameEmployee.value.length == 0){
             nameEmployee.classList.add("red-border");
             return false;
-        } if(!isAlpha(nameEmployee.value) || nameEmployee.value.length<3){
+        } if(!isAlpha(nameEmployee.value) || nameEmployee.value.length < 4){
             nameEmployee.classList.add("red-border");
             errorParagraphNameEmployee.textContent = "The name is wrong. Only letters and a length of 3 characters";
             errorParagraphNameEmployee.classList.add("error-text");
@@ -174,7 +196,7 @@ window.onload = function () {
         if (lastnameEmployee.value.length == 0){
             lastnameEmployee.classList.add("red-border");
             return false;
-        } if(!isAlpha(lastnameEmployee.value) || lastnameEmployee.value.length<3){
+        } if(!isAlpha(lastnameEmployee.value) || lastnameEmployee.value.length < 4){
             lastnameEmployee.classList.add("red-border");
             errorParagraphLastnameEmployee.textContent = "The Lastname is wrong. Only letters and a length of 3 characters";
             errorParagraphLastnameEmployee.classList.add("error-text");
@@ -188,9 +210,9 @@ window.onload = function () {
         if (dniEmployee.value.length == 0){
             dniEmployee.classList.add("red-border");
             return false;
-        } if(!isNumber(dniEmployee.value) || dniEmployee.value.length<7){
+        } if(!isNumber(dniEmployee.value) || dniEmployee.value.length < 7 || dniEmployee.value.length > 9){
             dniEmployee.classList.add("red-border");
-            errorParagraphDniEmployee.textContent = "The DNI is wrong. Only number and a length of 7 characters or more";
+            errorParagraphDniEmployee.textContent = "The DNI is wrong. Only number and a length of 7 or 8 characters";
             errorParagraphDniEmployee.classList.add("error-text");
             divs[2].appendChild(errorParagraphDniEmployee);
             return false;
@@ -371,4 +393,11 @@ window.onload = function () {
         var year = date.slice(0,4);
         return (day + "/" + month + "/" + year);
     }
+    function  addQueryParamsUrl(url,name,lastname,dni,date,phone,address,location,pc,email,password){
+        //address=address.replaceAll(' ','');
+        date=getDate(date);
+        return url+'?name='+name+'&lastName='+lastname+'&dni='+dni+'&dob='+date+'&phone='+phone+
+        '&address='+address+'&city='+location+'&zip='+pc+'&email='+email+'&password='+password;
+    }
+
 }

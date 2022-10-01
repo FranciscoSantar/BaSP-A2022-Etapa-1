@@ -38,18 +38,15 @@ window.onload = function () {
             return false;
         }
         else{
-            urlLogin=addqueryParamsUrl(urlLogin,email.value,password.value);
-            console.log(urlLogin);
+            urlLogin=addQueryParamsUrl(urlLogin,email.value,password.value);
             fetch(urlLogin)
             .then(function (response){
                 return response.json();
             })
             .then (function (data){
                 if(data.success){
-                    console.log(data);
                     alert("¡Login Success!\nMessage: "+data.msg);
                 } else{
-                    console.log(data);
                     alert("¡Login Error!\nMessage: "+data.msg);
                 }
             })
@@ -106,7 +103,7 @@ window.onload = function () {
         return true;
     }
 
-    function  addqueryParamsUrl(url,mail,password){
+    function  addQueryParamsUrl(url,mail,password){
         return url+'?email='+mail+'&password='+password;
     }
 
