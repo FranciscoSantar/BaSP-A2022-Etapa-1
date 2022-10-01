@@ -45,7 +45,7 @@ window.onload = function () {
             })
             .then (function (data){
                 if(data.success){
-                    alert("¡Login Success!\nMessage: "+data.msg);
+                    alert("¡Successful Login!\nMessage: "+data.msg);
                 } else{
                     alert("¡Login Error!\nMessage: "+data.msg);
                 }

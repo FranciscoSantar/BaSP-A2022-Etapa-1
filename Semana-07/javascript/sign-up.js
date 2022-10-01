@@ -24,6 +24,9 @@ window.onload = function () {
     var errorParagraphPasswordEmployee = document.createElement('p');
     var errorParagraphPasswordRepeatEmployee = document.createElement('p');
 
+    if (localStorage.length){
+        writeLocalStorage();
+    }
     nameEmployee.onblur = function (){
         checkNameEmployee ();
     }
@@ -158,6 +161,7 @@ window.onload = function () {
                         urlSignUp, nameEmployee.value, lastnameEmployee.value, dniEmployee.value, dateEmployee.value,
                         phoneEmployee.value, addressEmployee.value, locationEmployee.value, postalCodeEmployee.value,
                         emailEmployee.value, passwordEmployee.value);
+            console.log(urlSignUp)
             fetch(urlSignUp)
             .then(function (response){
                 return response.json();
@@ -165,6 +169,9 @@ window.onload = function () {
             .then(function (data){
                 if(data.success){
                     alert("¡Successful Login!\nMessage: "+data.msg);
+                    addLocalStorage(nameEmployee.value, lastnameEmployee.value, dniEmployee.value, dateEmployee.value,
+                        phoneEmployee.value, addressEmployee.value, locationEmployee.value, postalCodeEmployee.value,
+                        emailEmployee.value, passwordEmployee.value);
                 } else{
                     alert("Sign up Error!\nMessage: "+data.msg);
                 };
@@ -210,7 +217,7 @@ window.onload = function () {
         if (dniEmployee.value.length == 0){
             dniEmployee.classList.add("red-border");
             return false;
-        } if(!isNumber(dniEmployee.value) || dniEmployee.value.length < 7 || dniEmployee.value.length > 9){
+        } if(!isNumber(dniEmployee.value) || dniEmployee.value.length < 7 || dniEmployee.value.length > 8){
             dniEmployee.classList.add("red-border");
             errorParagraphDniEmployee.textContent = "The DNI is wrong. Only number and a length of 7 or 8 characters";
             errorParagraphDniEmployee.classList.add("error-text");
@@ -393,11 +400,36 @@ window.onload = function () {
         var year = date.slice(0,4);
         return (day + "/" + month + "/" + year);
     }
-    function  addQueryParamsUrl(url,name,lastname,dni,date,phone,address,location,pc,email,password){
+    function  addQueryParamsUrl(url,name,lastName,dni,date,phone,address,location,pc,email,password){
         //address=address.replaceAll(' ','');
         date=getDate(date);
-        return url+'?name='+name+'&lastName='+lastname+'&dni='+dni+'&dob='+date+'&phone='+phone+
+        return url+'?name='+name+'&lastName='+lastName+'&dni='+dni+'&dob='+date+'&phone='+phone+
         '&address='+address+'&city='+location+'&zip='+pc+'&email='+email+'&password='+password;
     }
-
+    function addLocalStorage(name,lastName,dni,date,phone,address,location,pc,email,password){
+        localStorage.setItem("name",name);
+        localStorage.setItem("lastName",lastName);
+        localStorage.setItem("dni",dni);
+        localStorage.setItem("dob",date);
+        localStorage.setItem("phone",phone);
+        localStorage.setItem("address",address);
+        localStorage.setItem("city",location);
+        localStorage.setItem("zip",pc);
+        localStorage.setItem("email",email);
+        localStorage.setItem("password",password);
+    }
+    function writeLocalStorage(){
+        console.log(localStorage.getItem("name"));
+        nameEmployee.value = localStorage.getItem("name");
+        lastnameEmployee.value = localStorage.getItem("lastName");
+        dniEmployee.value = localStorage.getItem("dni");
+        dateEmployee.value = localStorage.getItem("dob");
+        phoneEmployee.value = localStorage.getItem("phone");
+        addressEmployee.value = localStorage.getItem("address");
+        locationEmployee.value = localStorage.getItem("city");
+        postalCodeEmployee.value = localStorage.getItem("zip");
+        emailEmployee.value = localStorage.getItem("email");
+        passwordEmployee.value = localStorage.getItem("password");
+        passwordRepeatEmployee.value = localStorage.getItem("password");
+    }
 }
