@@ -39,6 +39,7 @@
 }
 #login-form input[type=text],#login-form input[type=password]{
     padding: 5px;
+    margin-top: 10px;
     width: 90%;
     border-radius: 5px;
 }
@@ -68,7 +69,13 @@
     position: relative;
     bottom: 0px;
 }
-.login-container a{
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.nav-links a{
+    width: 80%;
     text-decoration: none;
     font-size: 15px;
     font-weight: 700;
@@ -76,10 +83,10 @@
     margin-top: 25px;
     align-self: center;
 }
-.login-container a:hover {
+.nav-links a:hover {
     color: #76d842;
   }
-  .login-container a:active {
+.nav-links a:active {
     color: darkred;
   }
 

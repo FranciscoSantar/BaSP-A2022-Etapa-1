@@ -195,4 +195,7 @@ p{
     .form-field{
         max-width: 50%;
     }
+    .nav-links a{
+        max-width: 45%;
+    }
 }

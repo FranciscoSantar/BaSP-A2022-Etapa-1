@@ -25,12 +25,16 @@ window.onload = function () {
         var urlLogin='https://basp-m2022-api-rest-server.herokuapp.com/login';
         var errorMesagge = "";
         var anyError = false;
-        if (!checkEmail()){
-            errorMesagge += "The Email has an error. Please fix it\n"
+        var msgEmail = '';
+        var msgPassword = '';
+        msgEmail = checkEmail(msgEmail);
+        msgPassword = checkPassword(msgPassword);
+        if (msgEmail != 'ok'){
+            errorMesagge += msgEmail + "\n";
             anyError=true;
         }
-        if(!checkPassword()){
-            errorMesagge += "The Password has an error. Please fix it\n"
+        if(msgPassword != 'ok'){
+            errorMesagge += msgPassword + "\n";
             anyError = true;
         }
         if (anyError){
@@ -58,37 +62,49 @@ window.onload = function () {
         }
     }
 
-    function checkEmail (){
+    function checkEmail (msg){
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
         if (email.value.length == 0){
             email.classList.add("red-border");
-            return false;
-        } if (!emailExpression.test(email.value)){
-            email.classList.add("red-border");
-            errorParagraphEmail.textContent = "Wrong format of the Email, please fix it.";
+            msg = "The Email is required.";
+            errorParagraphEmail.textContent = msg;
             errorParagraphEmail.classList.add("error-text");
             divs[0].appendChild(errorParagraphEmail);
-            return false;
+            return msg;
+        } if (!emailExpression.test(email.value)){
+            email.classList.add("red-border");
+            msg = "Wrong format of the Email, please fix it.";
+            errorParagraphEmail.textContent = msg;
+            errorParagraphEmail.classList.add("error-text");
+            divs[0].appendChild(errorParagraphEmail);
+            return msg;
         } else{
             email.classList.add("green-border");
-            return true;
+            msg='ok';
+            return msg;
         }
     }
 
-    function checkPassword(){
+    function checkPassword(msg){
         if (!password.value.length){
             password.classList.add("red-border");
-            return false;
-        } if (!isAlphaNum(password.value) || password.value.length<8){
-            password.classList.add("red-border");
-            errorParagraphPassword.textContent =
-            "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            msg = 'The password is required.';
+            errorParagraphPassword.textContent = msg;
             errorParagraphPassword.classList.add("error-text");
             divs[1].appendChild(errorParagraphPassword);
-            return false;
+            return msg;
+        } if (!isAlphaNum(password.value) || password.value.length<8){
+            password.classList.add("red-border");
+            msg =
+            "The password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            errorParagraphPassword.textContent = msg;
+            errorParagraphPassword.classList.add("error-text");
+            divs[1].appendChild(errorParagraphPassword);
+            return msg;
         }
         password.classList.add("green-border");
-        return true;
+        msg = 'ok';
+        return msg;
     }
 
     function isAlphaNum (stringInput){
