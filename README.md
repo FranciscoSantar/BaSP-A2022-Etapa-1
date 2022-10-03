@@ -28,6 +28,8 @@ In this week we had an introduction to the programming language "JavaScript". We
 ## Week 06
 The topic of this week is DOM (Document Object Model). I made the screen of Login and Sign Up, and the validations of the fields in this screens was made with DOM, also made the "Contact" fields validations of the landig page. You can see the progress of the week [here](https://franciscosantar.github.io/BaSP-A2022-Etapa-1/Semana-06/views/index.html)
 
+## Week 07
+In this week we learned "asynchronous" operation in JavaScript like setTimeOut and promises. Also had knowledge about storages in internet explorers. The weekly [activity](https://franciscosantar.github.io/BaSP-A2022-Etapa-1/Semana-07/views/index.html) it's about take the login and signup screen of week 06 and make a Call to an API to check if an user alredy exist or storage the info in the "local Storage".
 
 **Author**: SANTARELLI,Francisco
 

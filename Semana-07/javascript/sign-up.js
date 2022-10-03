@@ -11,18 +11,28 @@ window.onload = function () {
     var passwordEmployee = document.getElementById("sign-up-password");
     var passwordRepeatEmployee = document.getElementById("sign-up-password-repeat");
     var sumbit = document.getElementById("sumbit-button");
-    var divs = document.getElementsByClassName("form-field");
-    var errorParagraphNameEmployee = document.createElement('p');
-    var errorParagraphLastnameEmployee = document.createElement('p');
-    var errorParagraphDniEmployee = document.createElement('p');
-    var errorParagraphDateEmployee = document.createElement('p');
-    var errorParagraphPhoneEmployee = document.createElement('p');
-    var errorParagraphAddressEmployee = document.createElement('p');
-    var errorParagraphLocationEmployee = document.createElement('p');
-    var errorParagraphPostalCodeEmployee = document.createElement('p');
-    var errorParagraphEmailEmployee = document.createElement('p');
-    var errorParagraphPasswordEmployee = document.createElement('p');
-    var errorParagraphPasswordRepeatEmployee = document.createElement('p');
+    var nameDiv = document.getElementById("name-field");
+    var lastNameDiv = document.getElementById("last-name-field");
+    var dniDiv = document.getElementById("dni-field");
+    var dateDiv = document.getElementById("date-field");
+    var addressDiv = document.getElementById("address-field");
+    var phoneDiv = document.getElementById("phone-field");
+    var locationDiv = document.getElementById("location-field");
+    var postalCodeDiv = document.getElementById("postal-code-field");
+    var emailDiv = document.getElementById("email-field");
+    var passwordDiv = document.getElementById("password-field");
+    var passwordRepeatDiv = document.getElementById("password-repeat-field");
+    var errorParagraphNameEmployee = document.createElement("p");
+    var errorParagraphLastnameEmployee = document.createElement("p");
+    var errorParagraphDniEmployee = document.createElement("p");
+    var errorParagraphDateEmployee = document.createElement("p");
+    var errorParagraphPhoneEmployee = document.createElement("p");
+    var errorParagraphAddressEmployee = document.createElement("p");
+    var errorParagraphLocationEmployee = document.createElement("p");
+    var errorParagraphPostalCodeEmployee = document.createElement("p");
+    var errorParagraphEmailEmployee = document.createElement("p");
+    var errorParagraphPasswordEmployee = document.createElement("p");
+    var errorParagraphPasswordRepeatEmployee = document.createElement("p");
 
     nameEmployee.onblur = function (){
         checkNameEmployee ();
@@ -98,7 +108,7 @@ window.onload = function () {
         checkPasswordRepeatEmployee ();
     }
     passwordRepeatEmployee.onfocus = function (){
-        passwordRepeatEmployee.classList.remove("green-border","red-border","purple-border");
+        passwordRepeatEmployee.classList.remove("green-border","red-border");
         errorParagraphPasswordRepeatEmployee.remove();
     }
 
@@ -134,37 +144,37 @@ window.onload = function () {
         msgPassword = checkPasswordEmployee(msgPassword)
         msgPasswordRepeat = checkPasswordRepeatEmployee(msgPasswordRepeat);
         if (msgName != 'ok'){
-            errorMesagge += msgName + "\n";
+            errorMesagge += '*' + msgName + '\n';
             anyError = true;
         } if (msgLastName != 'ok'){
-            errorMesagge += msgLastName + "\n";
+            errorMesagge += '*' + msgLastName + '\n';
             anyError = true;
         } if (msgDni != 'ok'){
-            errorMesagge += msgDni + "\n";
+            errorMesagge += '*' + msgDni + '\n';
             anyError = true;
         } if (msgDate != 'ok'){
-            errorMesagge += msgDate + "\n";
+            errorMesagge += '*' + msgDate + '\n';
             anyError = true;
         }  if (msgPhone != 'ok'){
-            errorMesagge += msgPhone + "\n";
+            errorMesagge += '*' + msgPhone + '\n';
             anyError = true;
         }if (msgAddress != 'ok'){
-            errorMesagge += msgAddress + "\n";
+            errorMesagge += '*' + msgAddress + '\n';
             anyError = true;
         } if (msgLocation != 'ok'){
-            errorMesagge += msgLocation + "\n";
+            errorMesagge += '*' + msgLocation + '\n';
             anyError = true;
         } if (msgPostalCode != 'ok'){
-            errorMesagge += msgPostalCode + "\n";
+            errorMesagge += '*' + msgPostalCode + '\n';
             anyError = true;
         } if (msgEmail != 'ok'){
-            errorMesagge += msgEmail + "\n";
+            errorMesagge += '*' + msgEmail + '\n';
             anyError = true;
         } if (msgPassword != 'ok'){
-            errorMesagge += msgPassword + "\n";
+            errorMesagge += '*' + msgPassword + '\n';
             anyError = true;
         } if (msgPasswordRepeat != 'ok'){
-            errorMesagge += msgPasswordRepeat + "\n";
+            errorMesagge += '*' + msgPasswordRepeat + '\n';
             anyError = true;
         } if (anyError){
             alert(errorMesagge);
@@ -180,22 +190,22 @@ window.onload = function () {
             })
             .then(function (data){
                 if(data.success){
-                    alert("¡Successful Sign Up!\nMessage: "+data.msg);
+                    alert('¡Successful Sign Up!\nMessage: '+data.msg);
                     addLocalStorage(nameEmployee.value, lastnameEmployee.value, dniEmployee.value, dateEmployee.value,
                         phoneEmployee.value, addressEmployee.value, locationEmployee.value, postalCodeEmployee.value,
                         emailEmployee.value, passwordEmployee.value);
                 } else{
-                    alert("Sign up Error!\nMessage: " + data.errors[0].msg);
+                    alert('Sign up Error!\nMessage: ' + data.errors[0].msg);
                 };
             })
             .catch(function (error){
-                alert("¡Contection error! \nPlease, try later. \nMessage: "+error.message);
+                alert('¡Contection error! \nPlease, try later. \nMessage: '+error.message);
             })
-            alert("Name: " + nameEmployee.value + "\nLastname: " + lastnameEmployee.value +
-                "\nDNI: " + dniEmployee.value + "\nBirth Date: " + getDate(dateEmployee.value) +
-                "\nPhone: " + phoneEmployee.value + "\nAddress: " + addressEmployee.value +
-                "\nLocalion: " + locationEmployee.value + "\nPostal Code: " + postalCodeEmployee.value +
-                "\nEmail: " + emailEmployee.value + "\nPassword: " + passwordEmployee.value);
+            alert('Name: ' + nameEmployee.value + '\nLastname: ' + lastnameEmployee.value +
+                '\nDNI: ' + dniEmployee.value + '\nBirth Date: ' + getDate(dateEmployee.value) +
+                '\nPhone: ' + phoneEmployee.value + '\nAddress: ' + addressEmployee.value +
+                '\nLocalion: ' + locationEmployee.value + '\nPostal Code: ' + postalCodeEmployee.value +
+                '\nEmail: ' + emailEmployee.value + '\nPassword: ' + passwordEmployee.value);
             return true;
         }
     }
@@ -205,14 +215,14 @@ window.onload = function () {
             msg = 'The Name is required.';
             errorParagraphNameEmployee.textContent = msg;
             errorParagraphNameEmployee.classList.add("error-text");
-            divs[0].appendChild(errorParagraphNameEmployee);
+            nameDiv.appendChild(errorParagraphNameEmployee);
             return msg;
         } if(!isAlpha(nameEmployee.value) || nameEmployee.value.length < 4){
             nameEmployee.classList.add("red-border");
-            msg = "The name is wrong. Only letters and a length of 3 characters";
+            msg = 'The name is wrong. Only letters and a length of 3 characters';
             errorParagraphNameEmployee.textContent = msg;
             errorParagraphNameEmployee.classList.add("error-text");
-            divs[0].appendChild(errorParagraphNameEmployee);
+            nameDiv.appendChild(errorParagraphNameEmployee);
             return msg;
         }
         nameEmployee.classList.add("green-border");
@@ -225,14 +235,14 @@ window.onload = function () {
             msg = 'The Last Name is required.';
             errorParagraphLastnameEmployee.textContent =msg;
             errorParagraphLastnameEmployee.classList.add("error-text");
-            divs[1].appendChild(errorParagraphLastnameEmployee);
+            lastNameDiv.appendChild(errorParagraphLastnameEmployee);
             return msg;
         } if(!isAlpha(lastnameEmployee.value) || lastnameEmployee.value.length < 4){
             lastnameEmployee.classList.add("red-border");
-            msg = "The Lastname is wrong. Only letters and a length of 3 characters";
+            msg = 'The Lastname is wrong. Only letters and a length of 3 characters';
             errorParagraphLastnameEmployee.textContent = msg;
             errorParagraphLastnameEmployee.classList.add("error-text");
-            divs[1].appendChild(errorParagraphLastnameEmployee);
+            lastNameDiv.appendChild(errorParagraphLastnameEmployee);
             return msg;
         }
         lastnameEmployee.classList.add("green-border");
@@ -245,14 +255,14 @@ window.onload = function () {
             msg = 'The DNI is required.';
             errorParagraphDniEmployee.textContent = msg;
             errorParagraphDniEmployee.classList.add("error-text");
-            divs[2].appendChild(errorParagraphDniEmployee);
+            dniDiv.appendChild(errorParagraphDniEmployee);
             return msg;
         } if(!isNumber(dniEmployee.value) || dniEmployee.value.length < 7 || dniEmployee.value.length > 8){
             dniEmployee.classList.add("red-border");
-            msg = "The DNI is wrong. Only number and a length of 7 or 8 characters";
+            msg = 'The DNI is wrong. Only number and a length of 7 or 8 characters';
             errorParagraphDniEmployee.textContent = msg;
             errorParagraphDniEmployee.classList.add("error-text");
-            divs[2].appendChild(errorParagraphDniEmployee);
+            dniDiv.appendChild(errorParagraphDniEmployee);
             return msg;
         }
         dniEmployee.classList.add("green-border");
@@ -262,19 +272,19 @@ window.onload = function () {
     function checkDateEmployee (msg){
         var bornYear = dateEmployee.value.slice(0,4);
         var actualYear = new Date().getFullYear();
-        if (bornYear == ""){
+        if (bornYear == ''){
             dateEmployee.classList.add("red-border");
-            msg = "The Born's Date is required.";
+            msg = 'The Born Date is required.';
             errorParagraphDateEmployee.textContent = msg;
             errorParagraphDateEmployee.classList.add("error-text");
-            divs[3].appendChild(errorParagraphDateEmployee);
+            dateDiv.appendChild(errorParagraphDateEmployee);
             return msg;
         } if (actualYear-bornYear<18){
             dateEmployee.classList.add("red-border");
-            msg = "The Employee must be over 18 years old";
+            msg = 'The Employee must be over 18 years old';
             errorParagraphDateEmployee.textContent = msg;
             errorParagraphDateEmployee.classList.add("error-text");
-            divs[3].appendChild(errorParagraphDateEmployee);
+            dateDiv.appendChild(errorParagraphDateEmployee);
             return msg;
         }
         dateEmployee.classList.add("green-border");
@@ -284,17 +294,17 @@ window.onload = function () {
     function checkPhoneEmployee (msg){
         if (phoneEmployee.value.length == 0){
             phoneEmployee.classList.add("red-border");
-            msg = "The Phone is required.";
+            msg = 'The Phone is required.';
             errorParagraphPhoneEmployee.textContent = msg;
             errorParagraphPhoneEmployee.classList.add("error-text");
-            divs[4].appendChild(errorParagraphPhoneEmployee);
+            phoneDiv.appendChild(errorParagraphPhoneEmployee);
             return msg;
         } if(!isNumber(phoneEmployee.value) || phoneEmployee.value.length != 10){
             phoneEmployee.classList.add("red-border");
-            msg = "The Phone is wrong. Only numbers and a length of 10 characters";
+            msg = 'The Phone is wrong. Only numbers and a length of 10 characters';
             errorParagraphPhoneEmployee.textContent = msg;
             errorParagraphPhoneEmployee.classList.add("error-text");
-            divs[4].appendChild(errorParagraphPhoneEmployee);
+            phoneDiv.appendChild(errorParagraphPhoneEmployee);
             return msg;
         }
         phoneEmployee.classList.add("green-border");
@@ -307,15 +317,15 @@ window.onload = function () {
             msg = 'The Address is required.';
             errorParagraphAddressEmployee.textContent = msg;
             errorParagraphAddressEmployee.classList.add("error-text");
-            divs[5].appendChild(errorParagraphAddressEmployee);
+            addressDiv.appendChild(errorParagraphAddressEmployee);
             return msg;
         } if (!isAlphaNum(addressEmployee.value) || addressEmployee.value.length < 5 ||
-        addressEmployee.value.indexOf(" ") == -1){
+        addressEmployee.value.indexOf(' ') == -1){
             addressEmployee.classList.add("red-border");
             msg = "The Address is wrong. Letters and numbers allowed and must have 5 characters and a space";
             errorParagraphAddressEmployee.textContent = msg;
             errorParagraphAddressEmployee.classList.add("error-text");
-            divs[5].appendChild(errorParagraphAddressEmployee);
+            addressDiv.appendChild(errorParagraphAddressEmployee);
             return msg;
         }
         addressEmployee.classList.add("green-border");
@@ -328,14 +338,14 @@ window.onload = function () {
             msg = 'The Location is required.';
             errorParagraphLocationEmployee.textContent = msg;
             errorParagraphLocationEmployee.classList.add("error-text");
-            divs[6].appendChild(errorParagraphLocationEmployee);
+            locationDiv.appendChild(errorParagraphLocationEmployee);
             return msg;
         } if (!isAlphaNum(locationEmployee.value) || locationEmployee.value.length < 3){
             locationEmployee.classList.add("red-border");
-            msg = "The Location is wrong. Letters and numbers allowed and must have 3 letters or more";
+            msg = 'The Location is wrong. Letters and numbers allowed and must have 3 letters or more';
             errorParagraphLocationEmployee.textContent = msg;
             errorParagraphLocationEmployee.classList.add("error-text");
-            divs[6].appendChild(errorParagraphLocationEmployee);
+            locationDiv.appendChild(errorParagraphLocationEmployee);
             return msg;
         }
         locationEmployee.classList.add("green-border");
@@ -348,15 +358,15 @@ window.onload = function () {
             msg = 'The Postal code is required.';
             errorParagraphPostalCodeEmployee.textContent = msg;
             errorParagraphPostalCodeEmployee.classList.add("error-text");
-            divs[7].appendChild(errorParagraphPostalCodeEmployee);
+            postalCodeDiv.appendChild(errorParagraphPostalCodeEmployee);
             return msg;
         } if (!isNumber(postalCodeEmployee.value) || postalCodeEmployee.value.length < 4 ||
         postalCodeEmployee.value.length > 5){
             postalCodeEmployee.classList.add("red-border");
-            msg = "The Postal Colde is wrong. Only numbers and must have a length of 4 or 5 characters";
+            msg = 'The Postal Colde is wrong. Only numbers and must have a length of 4 or 5 characters';
             errorParagraphPostalCodeEmployee.textContent = msg;
             errorParagraphPostalCodeEmployee.classList.add("error-text");
-            divs[7].appendChild(errorParagraphPostalCodeEmployee);
+            postalCodeDiv.appendChild(errorParagraphPostalCodeEmployee);
             return msg;
         }
         postalCodeEmployee.classList.add("green-border");
@@ -370,14 +380,14 @@ window.onload = function () {
             msg = 'The Email is required.';
             errorParagraphEmailEmployee.textContent = msg;
             errorParagraphEmailEmployee.classList.add("error-text");
-            divs[8].appendChild(errorParagraphEmailEmployee);
+            emailDiv.appendChild(errorParagraphEmailEmployee);
             return msg;
         } if (!emailExpression.test(emailEmployee.value)){
             emailEmployee.classList.add("red-border");
-            msg = "Wrong format of the Email, please fix it.";
+            msg = 'Wrong format of the Email, please fix it.';
             errorParagraphEmailEmployee.textContent = msg;
             errorParagraphEmailEmployee.classList.add("error-text");
-            divs[8].appendChild(errorParagraphEmailEmployee);
+            emailDiv.appendChild(errorParagraphEmailEmployee);
             return msg;
         }
         else{
@@ -392,14 +402,14 @@ window.onload = function () {
             msg = 'The Password is required';
             errorParagraphPasswordEmployee.textContent = msg;
             errorParagraphPasswordEmployee.classList.add("error-text");
-            divs[9].appendChild(errorParagraphPasswordEmployee);
+            passwordDiv.appendChild(errorParagraphPasswordEmployee);
             return msg;
         } if (!isAlphaNum(passwordEmployee.value) || passwordEmployee.value.length < 8){
             passwordEmployee.classList.add("red-border");
-            msg = "The Password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            msg = 'The Password is wrong. Letters and numbers allowed and must have 8 characters or more';
             errorParagraphPasswordEmployee.textContent = msg;
             errorParagraphPasswordEmployee.classList.add("error-text");
-            divs[9].appendChild(errorParagraphPasswordEmployee);
+            passwordDiv.appendChild(errorParagraphPasswordEmployee);
             return msg;
         }
         passwordEmployee.classList.add("green-border");
@@ -409,17 +419,17 @@ window.onload = function () {
     function checkPasswordRepeatEmployee (msg){
         if (passwordRepeatEmployee.value.length == 0){
             passwordRepeatEmployee.classList.add("red-border");
-            msg = "The Password is required.";
+            msg = 'The Password is required.';
             errorParagraphPasswordRepeatEmployee.textContent = msg;
             errorParagraphPasswordRepeatEmployee.classList.add("error-text");
-            divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
+            passwordRepeatDiv.appendChild(errorParagraphPasswordRepeatEmployee);
             return msg;
         } if (!isAlphaNum(passwordRepeatEmployee.value) || passwordRepeatEmployee.value.length < 8){
             passwordRepeatEmployee.classList.add("red-border");
-            msg = "The Password is wrong. Letters and numbers allowed and must have 8 characters or more";
+            msg = 'The Password is wrong. Letters and numbers allowed and must have 8 characters or more';
             errorParagraphPasswordRepeatEmployee.textContent = msg;
             errorParagraphPasswordRepeatEmployee.classList.add("error-text");
-            divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
+            passwordRepeatDiv.appendChild(errorParagraphPasswordRepeatEmployee);
             return msg;
         } if (passwordEmployee.value === passwordRepeatEmployee.value){
             passwordRepeatEmployee.classList.add("green-border");
@@ -427,15 +437,15 @@ window.onload = function () {
             return msg;
         }
         passwordRepeatEmployee.classList.add("red-border");
-        msg = "The Passwords don't match";
+        msg = 'The Passwords dont match';
         errorParagraphPasswordRepeatEmployee.textContent = msg;
         errorParagraphPasswordRepeatEmployee.classList.add("error-text");
-        divs[10].appendChild(errorParagraphPasswordRepeatEmployee);
+        passwordRepeatDiv.appendChild(errorParagraphPasswordRepeatEmployee);
         return msg;
     }
 
     function isAlpha (stringInput){
-        stringInput=stringInput.replaceAll(" ","");
+        stringInput=stringInput.replaceAll(' ','');
         for (var i=0 ; i<stringInput.length ; i++){
             if ( stringInput[i] < 'A' || stringInput[i] > 'z' || (stringInput[i] > 'Z' && stringInput[i] < 'a')){
                 return false;
@@ -453,7 +463,7 @@ window.onload = function () {
     }
 
     function isAlphaNum (stringInput){
-        stringInput=stringInput.replaceAll(" ","");
+        stringInput=stringInput.replaceAll(' ','');
         for (var i=0 ; i<stringInput.length ; i++){
             if (stringInput[i] < '0' || stringInput[i] > 'z' ||
             (stringInput[i] > '9' && stringInput[i] < 'A') ||
@@ -467,7 +477,7 @@ window.onload = function () {
         var day = date.slice(8);
         var month = date.slice(5,7);
         var year = date.slice(0,4);
-        return (day + "/" + month + "/" + year);
+        return (day + '/' + month + '/' + year);
     }
     function  addQueryParamsUrl (url,name,lastName,dni,date,phone,address,location,pc,email,password){
         date=getDate(date);
@@ -475,28 +485,28 @@ window.onload = function () {
         '&address='+address+'&city='+location+'&zip='+pc+'&email='+email+'&password='+password;
     }
     function addLocalStorage (name,lastName,dni,date,phone,address,location,pc,email,password){
-        localStorage.setItem("name",name);
-        localStorage.setItem("lastName",lastName);
-        localStorage.setItem("dni",dni);
-        localStorage.setItem("dob",date);
-        localStorage.setItem("phone",phone);
-        localStorage.setItem("address",address);
-        localStorage.setItem("city",location);
-        localStorage.setItem("zip",pc);
-        localStorage.setItem("email",email);
-        localStorage.setItem("password",password);
+        localStorage.setItem('name',name);
+        localStorage.setItem('lastName',lastName);
+        localStorage.setItem('dni',dni);
+        localStorage.setItem('dob',date);
+        localStorage.setItem('phone',phone);
+        localStorage.setItem('address',address);
+        localStorage.setItem('city',location);
+        localStorage.setItem('zip',pc);
+        localStorage.setItem('email',email);
+        localStorage.setItem('password',password);
     }
     function writeLocalStorage (){
-        nameEmployee.value = localStorage.getItem("name");
-        lastnameEmployee.value = localStorage.getItem("lastName");
-        dniEmployee.value = localStorage.getItem("dni");
-        dateEmployee.value = localStorage.getItem("dob");
-        phoneEmployee.value = localStorage.getItem("phone");
-        addressEmployee.value = localStorage.getItem("address");
-        locationEmployee.value = localStorage.getItem("city");
-        postalCodeEmployee.value = localStorage.getItem("zip");
-        emailEmployee.value = localStorage.getItem("email");
-        passwordEmployee.value = localStorage.getItem("password");
-        passwordRepeatEmployee.value = localStorage.getItem("password");
+        nameEmployee.value = localStorage.getItem('name');
+        lastnameEmployee.value = localStorage.getItem('lastName');
+        dniEmployee.value = localStorage.getItem('dni');
+        dateEmployee.value = localStorage.getItem('dob');
+        phoneEmployee.value = localStorage.getItem('phone');
+        addressEmployee.value = localStorage.getItem('address');
+        locationEmployee.value = localStorage.getItem('city');
+        postalCodeEmployee.value = localStorage.getItem('zip');
+        emailEmployee.value = localStorage.getItem('email');
+        passwordEmployee.value = localStorage.getItem('password');
+        passwordRepeatEmployee.value = localStorage.getItem('password');
     }
 }

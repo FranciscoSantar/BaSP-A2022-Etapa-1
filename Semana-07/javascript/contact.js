@@ -3,12 +3,15 @@ window.onload = function() {
     var emailContact = document.getElementById("contact-email");
     var selectContact = document.getElementById("contact-select")
     var messageContact = document.getElementById("contact-message");
-    var divs = document.getElementsByClassName("contact-field");
+    var divNameContact = document.getElementById("contact-name-container");
+    var divEmailContact = document.getElementById("contact-email-container");
+    var divSelectContact = document.getElementById("contact-select-container");
+    var divMessageContact = document.getElementById("contact-message-container");
     var sumbit = document.getElementById("contact-sumbit");
-    var errorParagraphNameContact = document.createElement('p');
-    var errorParagraphEmailContact = document.createElement('p');
-    var errorParagraphSelectContact = document.createElement('p');
-    var errorParagraphMessageContact = document.createElement('p');
+    var errorParagraphNameContact = document.createElement("p");
+    var errorParagraphEmailContact = document.createElement("p");
+    var errorParagraphSelectContact = document.createElement("p");
+    var errorParagraphMessageContact = document.createElement("p");
 
     nameContact.onblur = function (){
         checkNameContact ();
@@ -44,104 +47,130 @@ window.onload = function() {
 
     sumbit.onclick = function (e){
         e.preventDefault();
-        var errorMesagge = "";
+        var errorMesagge = '';
         var anyError = false;
-        if (!checkNameContact()){
-            errorMesagge += "The Name has an error. Please fix it\n"
+        var msgName = '';
+        var msgEmail = '';
+        var msgSelect = '';
+        var msgMessage = '';
+        msgName = checkNameContact(msgName);
+        msgEmail = checkEmailContact(msgEmail);
+        msgSelect = checkSelectContact(msgSelect);
+        msgMessage = checkMessageContact(msgMessage);
+        if (msgName != 'ok'){
+            errorMesagge += '*' + msgName + '\n';
             anyError = true;
-        } if(!checkEmailContact()){
-            errorMesagge += "The Email has an error. Please fix it\n"
+        } if(msgEmail != 'ok'){
+            errorMesagge += '*' + msgEmail + '\n';
             anyError = true;
-        } if(!checkMessageContact()){
-            errorMesagge += "The Message has an error. Please fix it\n"
+        } if(msgSelect != 'ok'){
+            errorMesagge += '*' + msgSelect + '\n';
             anyError = true;
-        } if(!checkSelectContact()){
-            errorMesagge += "You have to pick an Area to contact\n"
+        } if(msgMessage != 'ok'){
+            errorMesagge += '*' + msgMessage + '\n';
             anyError = true;
         } if (anyError){
             alert(errorMesagge);
             return false;
         } else{
-            alert("Name: " + nameContact.value + "\nEmail: " + emailContact.value
-            +"\nArea: " + selectContact.value + "\nMessage: " + messageContact.value);
+            alert('Name: ' + nameContact.value + '\nEmail: ' + emailContact.value
+            +'\nArea: ' + selectContact.value + '\nMessage: ' + messageContact.value);
             return true;
         }
     }
 
-    function checkNameContact (){
+    function checkNameContact (msg){
         if (nameContact.value.length == 0){
             nameContact.classList.add("red-border");
-            return false;
-        } if(!isAlpha(nameContact.value) || nameContact.value.length<3){
-            console.log("Error name");
-            nameContact.classList.add("red-border");
-            errorParagraphNameContact.textContent = "The name is wrong. Only letters and a length of 3 characters";
+            msg = 'The Name is required.';
+            errorParagraphNameContact.textContent = msg;
             errorParagraphNameContact.classList.add("error-text");
-            divs[0].appendChild(errorParagraphNameContact);
-            return false;
+            divNameContact.appendChild(errorParagraphNameContact);
+            return msg;
+        } if(!isAlpha(nameContact.value) || nameContact.value.length<3){
+            nameContact.classList.add("red-border");
+            msg = 'The name is wrong. Only letters and a length of 3 characters';
+            errorParagraphNameContact.textContent = msg;
+            errorParagraphNameContact.classList.add("error-text");
+            divNameContact.appendChild(errorParagraphNameContact);
+            return msg;
         }
         nameContact.classList.add("green-border");
-        return true;
+        msg = 'ok';
+        return msg;
     }
 
-    function checkEmailContact (){
+    function checkEmailContact (msg){
         var emailExpression = /^[^@]+@[^@]+\.[a-zA-Z]{2,}$/;
         if (emailContact.value.length == 0){
             emailContact.classList.add("red-border");
-            return false;
+            msg = 'The Email is required.';
+            errorParagraphEmailContact.textContent = msg;
+            errorParagraphEmailContact.classList.add("error-text");
+            divEmailContact.appendChild(errorParagraphEmailContact);
+            return msg;
         } if (!emailExpression.test(emailContact.value)){
             emailContact.classList.add("red-border");
-            errorParagraphEmailContact.textContent = "The Email is wrong.";
+            msg = 'Wrong format of the Email, please fix it.';
+            errorParagraphEmailContact.textContent = msg;
             errorParagraphEmailContact.classList.add("error-text");
-            divs[1].appendChild(errorParagraphEmailContact);
-            return false;
+            divEmailContact.appendChild(errorParagraphEmailContact);
+            return msg;
         } else{
             emailContact.classList.add("green-border");
-            return true;
+            msg = 'ok';
+            return msg;
         }
     }
 
-    function checkSelectContact (){
+    function checkSelectContact (msg){
         if (selectContact.value === 'default'){
             selectContact.classList.add("red-border");
-            errorParagraphSelectContact.textContent = "You have to select an area to contact";
+            msg = 'You have to select an area to contact';
+            errorParagraphSelectContact.textContent = msg;
             errorParagraphSelectContact.classList.add("error-text");
-            divs[2].appendChild(errorParagraphSelectContact);
-            return false;
+            divSelectContact.appendChild(errorParagraphSelectContact);
+            return msg;
         }
         selectContact.classList.add("green-border");
-        return true;
+        msg = 'ok';
+        return msg;
     }
 
-    function checkMessageContact (){
+    function checkMessageContact (msg){
         if (messageContact.value.length == 0){
             messageContact.classList.add("red-border");
-            return false;
+            msg = 'The Message is required.';
+            errorParagraphMessageContact.textContent = msg;
+            errorParagraphMessageContact.classList.add("error-text");
+            divMessageContact.appendChild(errorParagraphMessageContact);
+            return msg;
         } if(!isAlphaNum(messageContact.value) || messageContact.value.length<3){
             messageContact.classList.add("red-border");
-            errorParagraphMessageContact.textContent =
-            "The Message is wrong. Letters and numbers allowed and must have 3 characters";
+            msg = 'The Message is wrong. Letters and numbers allowed and must have 3 characters';
+            errorParagraphMessageContact.textContent = msg;
             errorParagraphMessageContact.classList.add("error-text");
-            divs[3].appendChild(errorParagraphMessageContact);
-            return false;
+            divMessageContact.appendChild(errorParagraphMessageContact);
+            return msg;
         }
         messageContact.classList.add("green-border");
-        return true;
+        msg = 'ok';
+        return msg;
     }
 
     function isAlphaNum (stringInput){
-        stringInput=stringInput.replaceAll(" ","");
+        stringInput=stringInput.replaceAll(' ','');
         for (var i=0 ; i<stringInput.length ; i++){
-            if (stringInput[i] < " "){
+            if (stringInput[i] < ' '){
                 return false;
             }
         }
         return true;
     }
     function isAlpha(stringInput){
-        stringInput=stringInput.replaceAll(" ","");
+        stringInput=stringInput.replaceAll(' ','');
         for (var i=0 ; i<stringInput.length ; i++){
-            if ( stringInput[i]<'A' || stringInput[i] >'z' || (stringInput[i]>'Z' && stringInput[i]<'a')){
+            if ( stringInput[i] < 'A' || stringInput[i] > 'z' || (stringInput[i]> 'Z' && stringInput[i] < 'a')){
                 return false;
             }
         }
