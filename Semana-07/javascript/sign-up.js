@@ -33,7 +33,18 @@ window.onload = function () {
     var errorParagraphEmailEmployee = document.createElement("p");
     var errorParagraphPasswordEmployee = document.createElement("p");
     var errorParagraphPasswordRepeatEmployee = document.createElement("p");
+    var textModal = document.createElement("p");
+    var signUpModal = document.getElementById("modal");
+    var closeButton = document.getElementById("x-button");
+    var modalButton = document.getElementById("button-modal");
+    var modalContentText = document.getElementById("text-content");
 
+    closeButton.onclick = function (){
+        signUpModal.style.display = "none";
+    }
+    modalButton.onclick = function (){
+        signUpModal.style.display = "none";
+    }
     nameEmployee.onblur = function (){
         checkNameEmployee ();
     }
@@ -190,16 +201,32 @@ window.onload = function () {
             })
             .then(function (data){
                 if(data.success){
-                    alert('¡Successful Sign Up!\nMessage: '+data.msg);
+                    signUpModal.style.display = "block";
+                    textModal.classList.remove("good-modal","error-modal");
+                    modalButton.classList.remove("good-button","error-button");
+                    textModal.innerText ='¡Successful Sign Up!\nMessage: '+data.msg;
+                    textModal.classList.add("good-modal");
+                    modalButton.classList.add("good-button");
+                    modalContentText.appendChild(textModal);
                     addLocalStorage(nameEmployee.value, lastnameEmployee.value, dniEmployee.value, dateEmployee.value,
                         phoneEmployee.value, addressEmployee.value, locationEmployee.value, postalCodeEmployee.value,
                         emailEmployee.value, passwordEmployee.value);
                 } else{
-                    alert('Sign up Error!\nMessage: ' + data.errors[0].msg);
+                    var msgError = '';
+                    for (var i = 0 ; i<data.errors.length ; i++){
+                        msgError += data.errors[i].msg + '\n';
+                    }
+                    throw new Error ('Sign Up Error!\nMessage: ' + msgError);
                 };
             })
             .catch(function (error){
-                alert('¡Contection error! \nPlease, try later. \nMessage: '+error.message);
+                signUpModal.style.display = "block";
+                textModal.classList.remove("good-modal","error-modal");
+                modalButton.classList.remove("good-button","error-button");
+                textModal.innerText = 'Sign up Error!\n' + error.message;
+                textModal.classList.add("error-modal");
+                modalButton.classList.add("error-button");
+                modalContentText.appendChild(textModal);
             })
             alert('Name: ' + nameEmployee.value + '\nLastname: ' + lastnameEmployee.value +
                 '\nDNI: ' + dniEmployee.value + '\nBirth Date: ' + getDate(dateEmployee.value) +
@@ -320,9 +347,9 @@ window.onload = function () {
             addressDiv.appendChild(errorParagraphAddressEmployee);
             return msg;
         } if (!isAlphaNum(addressEmployee.value) || addressEmployee.value.length < 5 ||
-        addressEmployee.value.indexOf(' ') == -1){
+            addressEmployee.value.indexOf(' ') == -1 || addressEmployee.value.split(' ').length > 2){
             addressEmployee.classList.add("red-border");
-            msg = "The Address is wrong. Letters and numbers allowed and must have 5 characters and a space";
+            msg = "The Address is wrong. Letters and numbers allowed and must have 5 characters and only one space";
             errorParagraphAddressEmployee.textContent = msg;
             errorParagraphAddressEmployee.classList.add("error-text");
             addressDiv.appendChild(errorParagraphAddressEmployee);
@@ -479,8 +506,14 @@ window.onload = function () {
         var year = date.slice(0,4);
         return (day + '/' + month + '/' + year);
     }
+    function getDate2(date){
+        var day = date.slice(8);
+        var month = date.slice(5,7);
+        var year = date.slice(0,4);
+        return (month + '/' + day + '/' + year);
+    }
     function  addQueryParamsUrl (url,name,lastName,dni,date,phone,address,location,pc,email,password){
-        date=getDate(date);
+        date=getDate2(date);
         return url+'?name='+name+'&lastName='+lastName+'&dni='+dni+'&dob='+date+'&phone='+phone+
         '&address='+address+'&city='+location+'&zip='+pc+'&email='+email+'&password='+password;
     }

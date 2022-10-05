@@ -6,7 +6,18 @@ window.onload = function () {
     var sumbit = document.getElementById("sumbit-button");
     var errorParagraphEmail = document.createElement("p");
     var errorParagraphPassword = document.createElement("p");
+    var textModal = document.createElement("p");
+    var loginModal = document.getElementById("modal");
+    var closeButton = document.getElementById("x-button");
+    var modalButton = document.getElementById("button-modal");
+    var modalContentText = document.getElementById("text-content");
 
+    closeButton.onclick = function (){
+        loginModal.style.display = "none";
+    }
+    modalButton.onclick = function (){
+        loginModal.style.display = "none";
+    }
     email.onblur = function (){
         checkEmail ();
     }
@@ -50,13 +61,26 @@ window.onload = function () {
             })
             .then (function (data){
                 if(data.success){
-                    alert('¡Successful Login!\nMessage: '+data.msg);
+                    loginModal.style.display = "block";
+                    textModal.classList.remove("good-modal","error-modal");
+                    modalButton.classList.remove("good-button","error-button");
+                    textModal.innerText ='\n\n¡Successful Login!\nMessage: '+data.msg;
+                    textModal.classList.add("good-modal");
+                    modalButton.classList.add("good-button");
+                    modalContentText.appendChild(textModal);
                 } else{
-                    alert('¡Login Error!\nMessage: '+data.msg);
+                    var msgError ='¡Login Error!\nMessage: '+data.msg;
+                    throw new Error (msgError);
                 }
             })
             .catch(function (error){
-                alert('¡Contection error! \nPlease, try later. \nMessage: '+error.message);
+                loginModal.style.display = "block";
+                textModal.classList.remove("good-modal","error-modal");
+                modalButton.classList.remove("good-button","error-button");
+                textModal.innerText = error.message;
+                textModal.classList.add("error-modal");
+                modalButton.classList.add("error-button");
+                modalContentText.appendChild(textModal);
             })
             alert('Email: ' + email.value + '\nPassword: ' + password.value);
             return true;
